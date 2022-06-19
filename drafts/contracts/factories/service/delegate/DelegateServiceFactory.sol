@@ -48,10 +48,10 @@ contract DelegateServiceFactory
     bytes memory delegateServiceCreationCode,
     bytes32 delegateServiceInterfaceId
   ) external returns (address delegateService) {
-    console.log("DelegateServiceFactory:deployDelegateService:: Deploying new DelegateService with salt of %s", uint256(delegateServiceInterfaceId));
-    console.log("DelegateServiceFactory:deployDelegateService:: Deploying new DelegateService from %s",address(this));
+    // console.log("DelegateServiceFactory:deployDelegateService:: Deploying new DelegateService with salt of %s", uint256(delegateServiceInterfaceId));
+    // console.log("DelegateServiceFactory:deployDelegateService:: Deploying new DelegateService from %s",address(this));
     delegateService = _deployDelegateService(delegateServiceCreationCode, delegateServiceInterfaceId);
-    console.log("DelegateServiceFactory:deployDelegateService:: New DelegateService address is %s", delegateService);
+    // console.log("DelegateServiceFactory:deployDelegateService:: New DelegateService address is %s", delegateService);
     require( IDelegateService(delegateService).registerDelegateService(delegateServiceInterfaceId), "DSFactory: DS registration failed." );
   }
 

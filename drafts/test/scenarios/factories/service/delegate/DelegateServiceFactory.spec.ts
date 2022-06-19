@@ -123,108 +123,108 @@ describe('Delegate Service Factory', function () {
   describe('DelegateServiceFactory', function () {
 
     describe("Validate interface and function selector computation", function () {
-      describe("MessengerDelegateService", function () {
-        it("IMessengerInterfaceId.", async function () {
-          expect(await messengerDelegateService.IMessengerInterfaceId())
-            .to.equal(IMessengerInterfaceId);
-        });
-        it("setMessageFunctionSelector.", async function () {
-          expect(await messengerDelegateService.setMessageFunctionSelector())
-            .to.equal(setMessageFunctionSelector);
-        });
-        it("getMessageFunctionSelector.", async function () {
-          expect(await messengerDelegateService.getMessageFunctionSelector())
-            .to.equal(getMessageFunctionSelector);
-        });
-      });
+      // describe("MessengerDelegateService", function () {
+      //   it("IMessengerInterfaceId.", async function () {
+      //     expect(await messengerDelegateService.IMessengerInterfaceId())
+      //       .to.equal(IMessengerInterfaceId);
+      //   });
+      //   it("setMessageFunctionSelector.", async function () {
+      //     expect(await messengerDelegateService.setMessageFunctionSelector())
+      //       .to.equal(setMessageFunctionSelector);
+      //   });
+      //   it("getMessageFunctionSelector.", async function () {
+      //     expect(await messengerDelegateService.getMessageFunctionSelector())
+      //       .to.equal(getMessageFunctionSelector);
+      //   });
+      // });
       
-      describe("DelegateServiceRegistryMock", function () {
-        it("IDelegateServiceRegistryInterfaceId.", async function () {
-          expect(await delegateServiceRegistry.IDelegateServiceRegistryInterfaceId())
-            .to.equal(IDelegateServiceRegistryInterfaceId);
-        });
-        it("selfRegisterDelegateServiceFunctionSelector.", async function () {
-          expect(await delegateServiceRegistry.selfRegisterDelegateServiceFunctionSelector())
-            .to.equal(selfRegisterDelegateServiceFunctionSelector);
-        });
-        it("queryDelegateServiceAddressFunctionSelector.", async function () {
-          expect(await delegateServiceRegistry.queryDelegateServiceAddressFunctionSelector())
-            .to.equal(queryDelegateServiceAddressFunctionSelector);
-        });
-        it("bulkQueryDelegateServiceAddressFunctionSelector.", async function () {
-          expect(await delegateServiceRegistry.bulkQueryDelegateServiceAddressFunctionSelector())
-            .to.equal(bulkQueryDelegateServiceAddressFunctionSelector);
-        });
-      });
+      // describe("DelegateServiceRegistryMock", function () {
+      //   it("IDelegateServiceRegistryInterfaceId.", async function () {
+      //     expect(await delegateServiceRegistry.IDelegateServiceRegistryInterfaceId())
+      //       .to.equal(IDelegateServiceRegistryInterfaceId);
+      //   });
+      //   it("selfRegisterDelegateServiceFunctionSelector.", async function () {
+      //     expect(await delegateServiceRegistry.selfRegisterDelegateServiceFunctionSelector())
+      //       .to.equal(selfRegisterDelegateServiceFunctionSelector);
+      //   });
+      //   it("queryDelegateServiceAddressFunctionSelector.", async function () {
+      //     expect(await delegateServiceRegistry.queryDelegateServiceAddressFunctionSelector())
+      //       .to.equal(queryDelegateServiceAddressFunctionSelector);
+      //   });
+      //   it("bulkQueryDelegateServiceAddressFunctionSelector.", async function () {
+      //     expect(await delegateServiceRegistry.bulkQueryDelegateServiceAddressFunctionSelector())
+      //       .to.equal(bulkQueryDelegateServiceAddressFunctionSelector);
+      //   });
+      // });
 
-      describe("DelegateServiceFactoryMock", function () {
-        it("IDelegateServiceFactoryInterfaceId.", async function () {
-          expect(await delegateServiceFactory.IDelegateServiceFactoryInterfaceId())
-            .to.equal(IDelegateServiceFactoryInterfaceId);
-        });
-        it("calculateDeploymentAddressFunctionSelector.", async function () {
-          expect(await delegateServiceFactory.calculateDeploymentAddressFunctionSelector())
-            .to.equal(calculateDeploymentAddressFunctionSelector);
-        });
-        it("deployDelegateServiceFunctionSelector.", async function () {
-          expect(await delegateServiceFactory.deployDelegateServiceFunctionSelector())
-            .to.equal(deployDelegateServiceFunctionSelector);
-        });
-        it("getDelegateServiceRegistryFunctionSelector.", async function () {
-          expect(await delegateServiceFactory.getDelegateServiceRegistryFunctionSelector())
-            .to.equal(getDelegateServiceRegistryFunctionSelector);
-        });
-      });
+      // describe("DelegateServiceFactoryMock", function () {
+      //   it("IDelegateServiceFactoryInterfaceId.", async function () {
+      //     expect(await delegateServiceFactory.IDelegateServiceFactoryInterfaceId())
+      //       .to.equal(IDelegateServiceFactoryInterfaceId);
+      //   });
+      //   it("calculateDeploymentAddressFunctionSelector.", async function () {
+      //     expect(await delegateServiceFactory.calculateDeploymentAddressFunctionSelector())
+      //       .to.equal(calculateDeploymentAddressFunctionSelector);
+      //   });
+      //   it("deployDelegateServiceFunctionSelector.", async function () {
+      //     expect(await delegateServiceFactory.deployDelegateServiceFunctionSelector())
+      //       .to.equal(deployDelegateServiceFunctionSelector);
+      //   });
+      //   it("getDelegateServiceRegistryFunctionSelector.", async function () {
+      //     expect(await delegateServiceFactory.getDelegateServiceRegistryFunctionSelector())
+      //       .to.equal(getDelegateServiceRegistryFunctionSelector);
+      //   });
+      // });
 
-      describe("ServiceProxyMock", function () {
-        it("IServiceProxyInterfaceId.", async function () {
-          expect(await proxy.IServiceProxyInterfaceId())
-            .to.equal(IServiceProxyInterfaceId);
-        });
-        it("getImplementationFunctionSelector.", async function () {
-          expect(await proxy.getImplementationFunctionSelector())
-            .to.equal(getImplementationFunctionSelector);
-        });
-        it("initializeServiceProxyFunctionSelector.", async function () {
-          expect(await proxy.initializeServiceProxyFunctionSelector())
-            .to.equal(initializeServiceProxyFunctionSelector);
-        });
-        it("ICreate2DeploymentMetadataInterfaceId.", async function () {
-          expect(await proxy.ICreate2DeploymentMetadataInterfaceId())
-            .to.equal(ICreate2DeploymentMetadataInterfaceId);
-        });
-        it("getCreate2DeploymentMetadataFunctionSelector.", async function () {
-          expect(await proxy.getCreate2DeploymentMetadataFunctionSelector())
-            .to.equal(getCreate2DeploymentMetadataFunctionSelector);
-        });
-      });
+      // describe("ServiceProxyMock", function () {
+      //   it("IServiceProxyInterfaceId.", async function () {
+      //     expect(await proxy.IServiceProxyInterfaceId())
+      //       .to.equal(IServiceProxyInterfaceId);
+      //   });
+      //   it("getImplementationFunctionSelector.", async function () {
+      //     expect(await proxy.getImplementationFunctionSelector())
+      //       .to.equal(getImplementationFunctionSelector);
+      //   });
+      //   it("initializeServiceProxyFunctionSelector.", async function () {
+      //     expect(await proxy.initializeServiceProxyFunctionSelector())
+      //       .to.equal(initializeServiceProxyFunctionSelector);
+      //   });
+      //   it("ICreate2DeploymentMetadataInterfaceId.", async function () {
+      //     expect(await proxy.ICreate2DeploymentMetadataInterfaceId())
+      //       .to.equal(ICreate2DeploymentMetadataInterfaceId);
+      //   });
+      //   it("getCreate2DeploymentMetadataFunctionSelector.", async function () {
+      //     expect(await proxy.getCreate2DeploymentMetadataFunctionSelector())
+      //       .to.equal(getCreate2DeploymentMetadataFunctionSelector);
+      //   });
+      // });
 
-      describe("ServiceProxyFactoryMock", function () {
-        it("IServiceProxyFactoryInterfaceId.", async function () {
-          expect(await serviceProxyFactory.IServiceProxyFactoryInterfaceId())
-            .to.equal(IServiceProxyFactoryInterfaceId);
-        });
-        it("calculateDeploymentAddressFunctionSelector.", async function () {
-          expect(await serviceProxyFactory.calculateDeploymentAddressFunctionSelector())
-            .to.equal(calculateDeploymentAddressFunctionSelector);
-        });
-        it("calculateMinimalProxyDeploymentAddressFunctionSelector.", async function () {
-          expect(await serviceProxyFactory.calculateMinimalProxyDeploymentAddressFunctionSelector())
-            .to.equal(calculateMinimalProxyDeploymentAddressFunctionSelector);
-        });
-        it("generateMinimalProxyInitCodeFunctionSelector.", async function () {
-          expect(await serviceProxyFactory.generateMinimalProxyInitCodeFunctionSelector())
-            .to.equal(generateMinimalProxyInitCodeFunctionSelector);
-        });
-        it("calculateDeploymentSaltFunctionSelector.", async function () {
-          expect(await serviceProxyFactory.calculateDeploymentSaltFunctionSelector())
-            .to.equal(calculateDeploymentSaltFunctionSelector);
-        });
-        it("deployServiceProxyFunctionSelector.", async function () {
-          expect(await serviceProxyFactory.deployServiceProxyFunctionSelector())
-            .to.equal(deployServiceProxyFunctionSelector);
-        });
-      });
+      // describe("ServiceProxyFactoryMock", function () {
+      //   it("IServiceProxyFactoryInterfaceId.", async function () {
+      //     expect(await serviceProxyFactory.IServiceProxyFactoryInterfaceId())
+      //       .to.equal(IServiceProxyFactoryInterfaceId);
+      //   });
+      //   it("calculateDeploymentAddressFunctionSelector.", async function () {
+      //     expect(await serviceProxyFactory.calculateDeploymentAddressFunctionSelector())
+      //       .to.equal(calculateDeploymentAddressFunctionSelector);
+      //   });
+      //   it("calculateMinimalProxyDeploymentAddressFunctionSelector.", async function () {
+      //     expect(await serviceProxyFactory.calculateMinimalProxyDeploymentAddressFunctionSelector())
+      //       .to.equal(calculateMinimalProxyDeploymentAddressFunctionSelector);
+      //   });
+      //   it("generateMinimalProxyInitCodeFunctionSelector.", async function () {
+      //     expect(await serviceProxyFactory.generateMinimalProxyInitCodeFunctionSelector())
+      //       .to.equal(generateMinimalProxyInitCodeFunctionSelector);
+      //   });
+      //   it("calculateDeploymentSaltFunctionSelector.", async function () {
+      //     expect(await serviceProxyFactory.calculateDeploymentSaltFunctionSelector())
+      //       .to.equal(calculateDeploymentSaltFunctionSelector);
+      //   });
+      //   it("deployServiceProxyFunctionSelector.", async function () {
+      //     expect(await serviceProxyFactory.deployServiceProxyFunctionSelector())
+      //       .to.equal(deployServiceProxyFunctionSelector);
+      //   });
+      // });
 
     });
 

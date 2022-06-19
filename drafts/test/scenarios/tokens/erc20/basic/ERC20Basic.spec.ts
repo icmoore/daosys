@@ -58,6 +58,13 @@ describe("ERC20Basic", function () {
     );
     tracer.nameTags[token.address] = "Test Token";
 
+    await token.initERC20(
+      tokenName,
+      tokenSymbol,
+      tokenDecimals,
+      tokenSupply
+    );
+
   });
 
   /* -------------------------------------------------------------------------- */

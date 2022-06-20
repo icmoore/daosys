@@ -52,6 +52,8 @@ library UniswapLiquidityCalculator {
     ) {
         console.log("calcReserveInput");
         uint reserve = reserveInput.add(reserveOutput);
+        console.log("%s", reserveInput);
+        console.log("%s", reserveOutput);
         console.log("%s", reserve);
         uint slippageAdjust = (amountOutput.mul(1000) / reserve.sub(amountOutput)).add(1000);
         console.log("%s", slippageAdjust);

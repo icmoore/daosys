@@ -2,20 +2,11 @@
 pragma solidity ^0.8.0;
 
 import {
-  IFactory,
-  Factory
-} from 'contracts/factory/Factory.sol';
+  Create2MetadataAwareFactoryLogic,
+  IFactory
+} from 'contracts/factory/metadata/logic/Create2MetadataAwareFactoryLogic.sol';
 
-contract FactoryMock is Factory {
-
-  /**
-   * @notice deploy contract code using "CREATE" opcode
-   * @param initCode contract initialization code
-   * @return deployment address of deployed contract
-   */
-  function deploy(bytes memory initCode) external returns (address deployment) {
-    deployment = _deploy(initCode);
-  }
+contract Create2MetadataAwareFactoryMock is Create2MetadataAwareFactoryLogic {
 
   /**
    * @notice deploy contract code using "CREATE2" opcode
@@ -24,8 +15,8 @@ contract FactoryMock is Factory {
    * @param salt input for deterministic address calculation
    * @return deployment address of deployed contract
    */
-  function deployWithSalt(bytes memory initCode, bytes32 salt) external returns (address deployment) {
-    deployment = _deployWithSalt(initCode, salt);
+  function deployWithCreate2Metadata(bytes memory initCode, bytes32 salt) external returns (address deployment) {
+    deployment = _deployWithCreate2Metadata(initCode, salt);
   }
   
   function IFactoryInterfaceId() pure external returns (bytes4 interfaceId) {

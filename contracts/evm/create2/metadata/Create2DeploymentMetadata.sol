@@ -62,6 +62,17 @@ abstract contract Create2DeploymentMetadata
     success = true;
   }
 
+  function getCreate2DeploymentMetadata() view external returns (
+    ICreate2DeploymentMetadata.Create2DeploymentMetadata memory metadata
+  ) {
+    (
+      metadata.deployerAddress,
+      metadata.deploymentSalt
+    ) = _getCreate2DeploymentMetadata(
+      STORAGE_SLOT_SALT
+    );
+  }
+
   
 
   // function _validateCreate2AddressPedigree(
@@ -81,16 +92,5 @@ abstract contract Create2DeploymentMetadata
   //     factoryAddress
   //   );
   // }
-
-  function getCreate2DeploymentMetadata() view external returns (
-    ICreate2DeploymentMetadata.Create2DeploymentMetadata memory metadata
-  ) {
-    (
-      metadata.deployerAddress,
-      metadata.deploymentSalt
-    ) = Create2DeploymentMetadataLogic._getCreate2DeploymentMetadata(
-      STORAGE_SLOT_SALT
-    );
-  }
 
 }

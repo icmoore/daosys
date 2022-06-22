@@ -13,22 +13,22 @@ import {
 import {
   Immutable
 } from "contracts/security/access/immutable/Immutable.sol";
-// import {
-//   ERC165
-// } from "contracts/introspection/erc165/ERC165.sol";
+import {
+  ERC165
+} from "contracts/introspection/erc165/ERC165.sol";
 
 abstract contract Create2DeploymentMetadata
   is
     Create2DeploymentMetadataLogic,
     ICreate2DeploymentMetadata,
-    // ERC165,
+    ERC165,
     Immutable
 {
 
   bytes32 internal constant STORAGE_SLOT_SALT = bytes32(type(ICreate2DeploymentMetadata).interfaceId);
 
   constructor() {
-    // _configERC165(type(ICreate2DeploymentMetadata).interfaceId);
+    _configERC165(type(ICreate2DeploymentMetadata).interfaceId);
   }
 
   // modifier _onlyRelative(

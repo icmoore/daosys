@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-V3-or-later
 pragma solidity ^0.8.0;
 
-import {FactoryUtils} from '../../../libraries/FactoryUtils.sol';
+import {FactoryUtils} from 'contracts/factory/libraries/FactoryUtils.sol';
 
 /**
  * @title Factory for the deployment of EIP1167 minimal proxies
@@ -16,9 +16,9 @@ library MinimalProxyFactoryLib {
    * @param target implementation contract to proxy
    * @return minimalProxy address of deployed proxy
    */
-  function _deployMinimalProxy(address target) internal returns (address minimalProxy) {
-    return FactoryUtils._deploy(_generateMinimalProxyInitCode(target));
-  }
+  // function _deployMinimalProxy(address target) internal returns (address minimalProxy) {
+  //   return FactoryUtils._deploy(_generateMinimalProxyInitCode(target));
+  // }
 
   /**
    * @notice deploy an EIP1167 minimal proxy using "CREATE2" opcode
@@ -27,9 +27,9 @@ library MinimalProxyFactoryLib {
    * @param salt input for deterministic address calculation
    * @return minimalProxy address of deployed proxy
    */
-  function _deployMinimalProxyWithSalt(address target, bytes32 salt) internal returns (address minimalProxy) {
-    return FactoryUtils._deployWithSalt(_generateMinimalProxyInitCode(target), salt);
-  }
+  // function _deployMinimalProxyWithSalt(address target, bytes32 salt) internal returns (address minimalProxy) {
+  //   return FactoryUtils._deployWithSalt(_generateMinimalProxyInitCode(target), salt);
+  // }
 
   /**
    * @notice calculate the deployment address for a given target and salt

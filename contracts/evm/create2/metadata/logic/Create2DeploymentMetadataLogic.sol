@@ -20,11 +20,11 @@ abstract contract Create2DeploymentMetadataLogic {
 
   function _setCreate2Factory(
     bytes32 storageSlotSalt,
-    address proxyFactoryAddress
+    address factoryAddress
   ) internal {
     Create2DeploymentMetadataStorageUtils._layout(storageSlotSalt)
       ._setCreate2Factory(
-        proxyFactoryAddress
+        factoryAddress
       );
   }
 
@@ -56,17 +56,34 @@ abstract contract Create2DeploymentMetadataLogic {
       ._getCreate2DeploymentSalt();
   }
 
+  function _setCreate2DeploymentMetaData(
+    bytes32 storageSlotSalt,
+    address factoryAddress,
+    bytes32 deploymentSalt
+  ) internal {
+    Create2DeploymentMetadataStorageUtils._layout(storageSlotSalt)
+      ._setCreate2Factory(
+        factoryAddress
+      );
+    Create2DeploymentMetadataStorageUtils._layout(storageSlotSalt)
+      ._setCreate2DeploymentSalt(
+        deploymentSalt
+      );
+  }
+
   function _getCreate2DeploymentMetadata(
     bytes32 storageSlotSalt
   ) view internal returns (
     address proxyFactoryAddress,
     bytes32 deploymentSalt
   ) {
-    (
-      proxyFactoryAddress,
-      deploymentSalt
-    ) = Create2DeploymentMetadataStorageUtils._layout(storageSlotSalt)
-      ._getCreate2DeploymentMetadata();
+    proxyFactoryAddress = _getCreate2Factory(storageSlotSalt);
+    deploymentSalt = _getCreate2DeploymentSalt(storageSlotSalt);
+    // (
+    //   proxyFactoryAddress,
+    //   deploymentSalt
+    // ) = Create2DeploymentMetadataStorageUtils._layout(storageSlotSalt)
+    //   ._getCreate2DeploymentMetadata();
   }
 
   // function _validateCreate2AddressPedigree(

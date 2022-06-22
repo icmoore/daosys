@@ -77,14 +77,14 @@ library Create2DeploymentMetadataStorageUtils {
     deploymentSalt = layout.deploymentSalt._getValue();
   }
 
-  function _getCreate2DeploymentMetadata(
-    Create2DeploymentMetadataStorage.Layout storage layout
-  ) view internal returns (
-    address factoryAddress,
-    bytes32 deploymentSalt
-  ) {
-    factoryAddress = layout.factoryAddress._getValue();
-    deploymentSalt = layout.deploymentSalt._getValue();
-  }
+  // function _getCreate2DeploymentMetadata(
+  //   Create2DeploymentMetadataStorage.Layout storage layout
+  // ) view internal returns (
+  //   address factoryAddress,
+  //   bytes32 deploymentSalt
+  // ) {
+  //   factoryAddress = layout.factoryAddress._getValue();
+  //   deploymentSalt = layout.deploymentSalt._getValue();
+  // }
 
 }

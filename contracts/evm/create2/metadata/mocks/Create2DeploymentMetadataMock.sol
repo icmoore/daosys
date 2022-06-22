@@ -16,6 +16,7 @@ contract Create2DeploymentMetadataMock
     bytes32 deploymentSalt
   ) external returns (bool success) {
     _setCreate2DeploymentMetaData(
+      STORAGE_SLOT_SALT,
       proxyFactoryAddress,
       deploymentSalt
     );

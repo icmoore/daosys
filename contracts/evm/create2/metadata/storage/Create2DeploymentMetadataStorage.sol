@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-pragma solidity ^0.8.0;
+// DO NOT CHANGE COMPILER VERSION FROM DEPLOYED VERSION
+// OPTIMIZER RUNS = 200
+pragma solidity 0.8.13;
 
 import {
   Bytes32,
@@ -45,13 +47,34 @@ library Create2DeploymentMetadataStorageUtils {
     assembly{ layout.slot := saltedSlot }
   }
 
-  function _setCreate2DeploymentMetaData(
+  function _setCreate2Factory(
     Create2DeploymentMetadataStorage.Layout storage layout,
-    address factoryAddress,
+    address factoryAddress
+  ) internal {
+    layout.factoryAddress._setValue(factoryAddress);
+  }
+
+  function _getCreate2Factory(
+    Create2DeploymentMetadataStorage.Layout storage layout
+  ) view internal returns (
+    address factoryAddress
+  ) {
+    factoryAddress = layout.factoryAddress._getValue();
+  }
+  
+  function _setCreate2DeploymentSalt(
+    Create2DeploymentMetadataStorage.Layout storage layout,
     bytes32 deploymentSalt
   ) internal {
     layout.deploymentSalt._setValue(deploymentSalt);
-    layout.factoryAddress._setValue(factoryAddress);
+  }
+
+  function _getCreate2DeploymentSalt(
+    Create2DeploymentMetadataStorage.Layout storage layout
+  ) view internal returns (
+    bytes32 deploymentSalt
+  ) {
+    deploymentSalt = layout.deploymentSalt._getValue();
   }
 
   function _getCreate2DeploymentMetadata(
@@ -62,14 +85,6 @@ library Create2DeploymentMetadataStorageUtils {
   ) {
     factoryAddress = layout.factoryAddress._getValue();
     deploymentSalt = layout.deploymentSalt._getValue();
-  }
-
-  function _getCreate2Factory(
-    Create2DeploymentMetadataStorage.Layout storage layout
-  ) view internal returns (
-    address factoryAddress
-  ) {
-    factoryAddress = layout.factoryAddress._getValue();
   }
 
 }

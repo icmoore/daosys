@@ -9,7 +9,7 @@ import {
   Messenger__factory,
   ProxyMock,
   ProxyMock__factory
-} from '../../../typechain';
+} from '../../../../../typechain';
 
 describe("Proxy", function () {
 

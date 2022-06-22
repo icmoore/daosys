@@ -9,7 +9,7 @@ import {
   MessengerDelegateService__factory,
   DelegateServiceRegistryMock,
   DelegateServiceRegistryMock__factory
-} from '../../../../../typechain';
+} from '../../../../../../../typechain';
 
 describe("Delegate Service Registry", function () {
 

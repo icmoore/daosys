@@ -1,5 +1,7 @@
-// SPDX-License-Identifier: AGPL-V3-or-later
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// DO NOT CHANGE COMPILER VERSION FROM DEPLOYED VERSION
+// OPTIMIZER RUNS = 200
+pragma solidity 0.8.13;
 
 import {
   Bool,
@@ -45,7 +47,7 @@ library ImmutableStorageUtils {
 
   /*
    * @dev Used to encode a salt with the immutability storage slot modifier.
-   *  This is donee by passing the idenitifier for what is to immutable.
+   *  This is done by passing the idenitifier for what is to be immutable.
    *  If a functrion is intended to be Immutable, the identifier is the function selector.
    *  If a facet function is to be immutable, the identifier is the XOR (^) of the facet address and the function selector.
    *  If an entire storage slot is to be immutable, the identifier is the sttorage slot being made immutable.
@@ -55,12 +57,12 @@ library ImmutableStorageUtils {
     immutableSlot = _saltStorageSlot(storageSlot);
   }
 
-  function _makeImmutable( ImmutableStorage.Layout storage l ) internal {
-    l.isImmutable._setValue(true);
+  function _makeImmutable( ImmutableStorage.Layout storage layout ) internal {
+    layout.isImmutable._setValue(true);
   }
 
-  function _isImmutable( ImmutableStorage.Layout storage l ) internal view returns ( bool isImmutablke ) { 
-    isImmutablke = l.isImmutable._getValue();
+  function _isImmutable( ImmutableStorage.Layout storage layout ) internal view returns ( bool isImmutablke ) { 
+    isImmutablke = layout.isImmutable._getValue();
   }
 
 }

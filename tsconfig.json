@@ -7,6 +7,6 @@
     "outDir": "dist",
     "declaration": true
   },
-  "include": ["./scripts", "./test", "./typechain"],
+  "include": ["./scripts", "./test", "./typechain", "drafts/main/test/scenarios/registries", "drafts/main/test/scenarios/proxy", "drafts/main/test/scenarios/evm/create2"],
   "files": ["./hardhat.config.ts"]
 }

@@ -5,7 +5,6 @@ import {
   ERC165Logic
 } from 'contracts/introspection/erc165/logic/ERC165Logic.sol';
 import {IERC165} from "contracts/introspection/erc165/interfaces/IERC165.sol";
-// import {ERC165Lib, ERC165Storage} from './libraries/ERC165Lib.sol';
 
 /**
  * @title ERC165 implementation

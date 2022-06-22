@@ -5,6 +5,9 @@ import {
   Create2DeploymentMetadataStorageUtils,
   Create2DeploymentMetadataStorage
 } from "contracts/evm/create2/metadata/storage/Create2DeploymentMetadataStorage.sol";
+import {
+  Create2Utils
+} from "contracts/evm/create2/libraries/Create2Utils.sol";
 // import {
 //   Create2MetadataAdaptor
 // } from "contracts/evm/create2/metadata/adaptors/Create2MetadataAdaptor.sol";
@@ -15,8 +18,6 @@ import {
 abstract contract Create2DeploymentMetadataLogic {
 
   using Create2DeploymentMetadataStorageUtils for Create2DeploymentMetadataStorage.Layout;
-  // using Create2MetadataAdaptor for address;
-  // using FactoryAdaptor for address;
 
   function _setCreate2Factory(
     bytes32 storageSlotSalt,
@@ -79,11 +80,22 @@ abstract contract Create2DeploymentMetadataLogic {
   ) {
     proxyFactoryAddress = _getCreate2Factory(storageSlotSalt);
     deploymentSalt = _getCreate2DeploymentSalt(storageSlotSalt);
-    // (
-    //   proxyFactoryAddress,
-    //   deploymentSalt
-    // ) = Create2DeploymentMetadataStorageUtils._layout(storageSlotSalt)
-    //   ._getCreate2DeploymentMetadata();
+  }
+
+  function _validateFactory(
+    bytes32 storageSlotSalt,
+    address factoryAddress
+  ) internal view returns (bool isValid) {
+    // Deliberately recalculating address to minimize the risk of other modules some how spoofing the stored factory address.
+    isValid = address(this) == Create2Utils._calculateDeploymentAddress(
+      factoryAddress, 
+      address(this).codehash, 
+      _getCreate2DeploymentSalt(storageSlotSalt)
+    );
+    // isValid = (
+    //     factoryAddress == Create2DeploymentMetadataStorageUtils._layout(storageSlotSalt)
+    //       ._getCreate2Factory()
+    //   );
   }
 
   // function _validateCreate2AddressPedigree(
@@ -110,14 +122,6 @@ abstract contract Create2DeploymentMetadataLogic {
   //   );
   // }
 
-  // function _validateFactory(
-  //   bytes32 storageSlotSalt,
-  //   address factoryAddress
-  // ) internal view returns (bool isValid) {
-  //   isValid = (
-  //       factoryAddress == Create2DeploymentMetadataStorageUtils._layout(storageSlotSalt)
-  //         ._getCreate2Factory()
-  //     );
-  // }
+  
 
 }

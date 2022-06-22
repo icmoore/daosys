@@ -10,14 +10,18 @@ import {
 } from '../../../../../typechain';
 
 describe('Create2DeploymentMetadata', function () {
+
+  // Control values for tests
+  const invalidInterfaceId = "0xffffffff";
+  const erc165InterfaceID = "0x01ffc9a7";
+  const ICreate2DeploymentMetadataInterfaceId = '0x2f6fb0fb';
+  const initCreate2DeploymentMetadataFunctionSelector = '0x016772e7';
+  const getCreate2DeploymentMetadataFunctionSelector = '0x2e08c21c';
   
   // Test Wallets
   let deployer: SignerWithAddress;
   
   let create2Metadata: Create2DeploymentMetadataMock;
-  const ICreate2DeploymentMetadataInterfaceId = '0x2f6fb0fb';
-  const initCreate2DeploymentMetadataFunctionSelector = '0x016772e7';
-  const getCreate2DeploymentMetadataFunctionSelector = '0x2e08c21c';
 
   before(async function () {
     // Tagging address(0) as "System" in logs.
@@ -84,6 +88,13 @@ describe('Create2DeploymentMetadata', function () {
           expect(metadata.deployerAddress).to.equal(deployer.address);
           expect(metadata.deploymentSalt).to.equal(codeHash);
 
+
+          expect(await create2Metadata.supportsInterface(invalidInterfaceId))
+            .to.equal(false);
+
+          expect(await create2Metadata.supportsInterface(erc165InterfaceID))
+            .to.equal(true);
+
         });
 
         it('Reverts once metadata is set.', async function () {
@@ -99,6 +110,12 @@ describe('Create2DeploymentMetadata', function () {
           expect(metadata.deployerAddress).to.equal(deployer.address);
           expect(metadata.deploymentSalt).to.equal(codeHash);
 
+          expect(await create2Metadata.supportsInterface(invalidInterfaceId))
+            .to.equal(false);
+
+          expect(await create2Metadata.supportsInterface(erc165InterfaceID))
+            .to.equal(true);
+
           await expect(
             create2Metadata.connect(deployer).initCreate2DeploymentMetadata(
               codeHash
@@ -109,6 +126,12 @@ describe('Create2DeploymentMetadata', function () {
 
           expect(metadataRecheck.deployerAddress).to.equal(deployer.address);
           expect(metadataRecheck.deploymentSalt).to.equal(codeHash);
+
+          expect(await create2Metadata.supportsInterface(invalidInterfaceId))
+            .to.equal(false);
+
+          expect(await create2Metadata.supportsInterface(erc165InterfaceID))
+            .to.equal(true);
 
         });
 

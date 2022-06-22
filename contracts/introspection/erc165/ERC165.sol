@@ -15,10 +15,6 @@ abstract contract ERC165
     ERC165Logic
 {
 
-  constructor() {
-    ERC165._erc165Init();
-  }
-
   function _erc165Init() internal {
     _setSupportedInterface(
         type(IERC165).interfaceId,

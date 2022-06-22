@@ -11,6 +11,10 @@ contract ERC165Mock
     ERC165
 {
 
+  constructor() {
+    ERC165._erc165Init();
+  }
+
   function ERC165InterfaceId() external pure returns ( bytes4 interfaceId ) {
     interfaceId = type(IERC165).interfaceId;
   }

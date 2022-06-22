@@ -15,11 +15,17 @@ contract Create2DeploymentMetadataMock
     address proxyFactoryAddress,
     bytes32 deploymentSalt
   ) external returns (bool success) {
+    _erc165Init();
+    _configERC165(type(ICreate2DeploymentMetadata).interfaceId);
     _setCreate2DeploymentMetaData(
       STORAGE_SLOT_SALT,
       proxyFactoryAddress,
       deploymentSalt
     );
+    success = true;
+  }
+
+  function onlyFactory() external view _onlyFactory(msg.sender) returns (bool success) {
     success = true;
   }
 

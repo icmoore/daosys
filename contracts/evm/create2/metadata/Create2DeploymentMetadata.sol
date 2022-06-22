@@ -27,9 +27,6 @@ abstract contract Create2DeploymentMetadata
 
   bytes32 internal constant STORAGE_SLOT_SALT = bytes32(type(ICreate2DeploymentMetadata).interfaceId);
 
-  constructor() {
-    _configERC165(type(ICreate2DeploymentMetadata).interfaceId);
-  }
 
   // modifier _onlyRelative(
   //   address relationAssertion
@@ -41,19 +38,28 @@ abstract contract Create2DeploymentMetadata
   //   _;
   // }
 
-  // modifier _onlyFactory(
-  //   address factoryAssertion
-  // ) {
-  //   require(
-  //     _validateFactory(factoryAssertion),
-  //     "Create2DeploymentMetadata:_onlyRelative:: Not factory."
-  //   );
-  //   _;
-  // }
+  modifier _onlyFactory(
+    address factoryAssertion
+  ) {
+    require(
+      _validateFactory(
+        STORAGE_SLOT_SALT,
+        factoryAssertion
+      ),
+      "Create2DeploymentMetadata:_onlyFactory:: Not factory."
+    );
+    _;
+  }
 
+  /**
+   * @dev ONLY USE WITH CONTRACTS DEPLOYED FROM A Create2MetadataAwareFactoryLogic.
+   *  This function will be called by a Create2MetadataAware factory.
+   */
   function initCreate2DeploymentMetadata(
     bytes32 deploymentSalt
   ) external isNotImmutable(STORAGE_SLOT_SALT) returns (bool success) {
+    _erc165Init();
+    _configERC165(type(ICreate2DeploymentMetadata).interfaceId);
     _setCreate2DeploymentMetaData(
       STORAGE_SLOT_SALT,
       msg.sender,

@@ -1,4 +1,4 @@
-= ApeSwap Review
+= ApeSwap Unique Features and Review
 ifndef::compositing[]
 :author: Ian Moore
 :email: imoore@syscoin.org
@@ -54,7 +54,6 @@ Tokenomics:
 
 AKA the Golden Banana token designed to reqard ApeSwap's members; GNANA enables holders to participate in governance, and take advantage of benefits which include farming, pools, and special IAO allocations. Serves as am extension to BANANA tokenomics, and is a derivative token of BANANA. GNANA can only be aquired by converting BANANA to receive 0.7 GNANA for every 1 BANANA.
 
-
 Functions include:
 
 * *Vote on ApeSwap DAO governance proposals*
@@ -63,6 +62,18 @@ Functions include:
 * *Passive farming* 
 
 GNANA is a reflect token, which means anytime that GNANA is moved, 2% of the amount transferred is distributed proportially to all users who hold GNANA; GNANA is backed 1:1 by BANANA, and can be exchanged for BANANA. Since GNANA is backed 1:1 by BANANA.
+
+=== Staking
+
+Their are three wards to stake tokens on the ApeSwap platform:
+
+*Staking Pools:* allows users to stake BANANA or GNANA tokens to earn BANANA token, or partner tokens
+
+*Yield Farms:* offers users who provide liquidity to the platform the ability to stake native liquidity provider tokens
+
+*BANANA Maximizer Vaults:* can stake LP tokens in ApeSwap's BANANA Maximizers to auto-compound rewards instead of re-staking LP tokens 
+
+
 
 === Treasury Bills
 

@@ -16,3 +16,77 @@ ifndef::compositing[]
 :compositing:
 endif::[]
 
+ApeSwap is a DeFi platform overseen by the ApeSwap DA). Here are the following features that ApeSwap offers:
+
+* *Join* the native platform and purchase the native tokens (BANANA/GNANA)
+* *Swap* on BNB, Polugon and Thereum chains using DEX
+* *Create Liquidity* between pairs to receive LP tokens which can be staked in Yield Farms to earn BANANA
+* *Stake BANANA/GNANA* to earn yeild from partner projects
+* *Lend and borrow* withing Apeswap lending network
+* *Participate* in Initial Apr Offerings
+
+Crypto projects can partner with ApeSwap to:
+
+* *List* tokens on decentralized exchange
+* *Receive* advisory services
+* *Network* with partnership ecosystem
+* *Co-market* with apeswap to aquire new users
+* *Create Yield Farms* to incentivize users to add liquidity
+* *Raise Capital* through Initial Ape Offerings and Jungle Bills
+
+
+=== Banana Token
+
+Primary native utility token of the ApeSwap ecosystem; it serves several functions which including staking, rewards for adding liqudity, and providing lending incentives. BANANA burns tokens weekly to reduce inflation.
+
+Functions include:
+
+* *Staking* into https://apeswap.finance/pools[liquidity pools]
+* *Add liquidity* using https://apeswap.finance/pool[liquidity tab] of exchange page by pairing BANANA with BNB/BUSD to create liquidity provider tokens
+* *Treasury Bills* can be https://apeswap.finance/treasury-bills[purchased] allowing users to access tokens at a discount in exchange for LP. Each bill is a unique NFT that represents the contract
+* Lend using https://lending.apeswap.finance/markets[lending network] to earn interest
+* Borrow against BANANA on https://lending.apeswap.finance/markets[lending network] to unlock liquidity
+
+Tokenomics:
+* 11 emissions per block to a total of 316k per day
+
+=== Gnana Token
+
+AKA the Golden Banana token designed to reqard ApeSwap's members; GNANA enables holders to participate in governance, and take advantage of benefits which include farming, pools, and special IAO allocations. Serves as am extension to BANANA tokenomics, and is a derivative token of BANANA. GNANA can only be aquired by converting BANANA to receive 0.7 GNANA for every 1 BANANA.
+
+
+Functions include:
+
+* *Vote on ApeSwap DAO governance proposals*
+* *Staking* in GNANA-only staking pools to earn BANANA
+* *Participate in special GNANA-only allocations* in intial Ape Offerings
+* *Passive farming* 
+
+GNANA is a reflect token, which means anytime that GNANA is moved, 2% of the amount transferred is distributed proportially to all users who hold GNANA; GNANA is backed 1:1 by BANANA, and can be exchanged for BANANA. Since GNANA is backed 1:1 by BANANA.
+
+=== Treasury Bills
+
+Inspired by a combination of TadFi, DeFi and NFT products. Apeswap's treasury bills allows users to access tokens at a discount in exchange for their LP tokens where each treasury bill is a unique NFT that represents the output tokens, which vest over a certain amount of time. Come in two formats: 
+
+* *BANANA Bills* offers user to sell their LP tokens for BANANA at a discount relative to current market price. According to their governance propsal, 1/11 of every new minted BANANA go toward to protocol-owned liquidity fund. Users receive discounted BANANA, and the protocol receives liquidity that it controls and can use to generate sustainable revenue via trading fees. To purchase, users must first create LP tokens by adding liquidity to the DEX for the trading pair that corresponds to that type of BANANA Bill. Example, BANANA-BNB LP tokens are used to purchase BANANA-BNB treasury bills, which yield BANANA utility tokens
+
+* *Jungle Bills* work like BANANA Bills, but instead of accessing BANANA tokens, users can access tokens from select partner projects using LP. Jungle Bills work like BANANA Bills, however instead of receiving BANANA as the output token, users receive tokens that are provided by tokens of whatever the partnering external project is. To buy a Jungle Bill, a user must first create an LP token by adding liquidity to the DEX. For example, NFTY-BNB LP tokens are used to purchase NFTY-BNB Treasury Bills
+
+=== Initial Ape Offerings (IAOs)
+
+IAOs are fundrasing vehicles used to launch new tokens and bring in liquidity using BNB or GNANA. Aftern and IAO conlcuded, the project will receive BNB, and ApeSwap converts the raised GNANA to BANANA and then burns it. IOAs employ the *Overflow* model which ensures that the more you commit to an IAO, the more partner tokens you will receive.
+
+=== https://ape-swap.medium.com/self-serve-iaos-how-to-dyor-7c63a68696ad[Self-Serve IAO (SS-IAO)] 
+
+Allows any crypto project to raise funds and boostrap liquidity on the ApeSwap DEX. Difference between official IAOs and SS-IAOs include:
+
+* SS-IAOs are not official endorsed by ApeSwap
+* SS-IAOs do not receive official marketing support from ApeSwap
+* SS-IAOs use a soft+hard cap model instead of an overflow model; that is once the hard car is met, the raise ends   
+
+=== Lend
+
+Offers a lending network directly within the ApeSwap ecosystem
+
+* *Lending* is the process of depositing tokens to a lending network; in exchange for providing liquidity, users receive interest on the tokens they have deposited. Lenders are able to withdraw their tokens at eny time
+* *Borrowing* is the act of taking a loan from a lending network

@@ -73,8 +73,6 @@ Their are three wards to stake tokens on the ApeSwap platform:
 
 *BANANA Maximizer Vaults:* can stake LP tokens in ApeSwap's BANANA Maximizers to auto-compound rewards instead of re-staking LP tokens 
 
-
-
 === Treasury Bills
 
 Inspired by a combination of TadFi, DeFi and NFT products. Apeswap's treasury bills allows users to access tokens at a discount in exchange for their LP tokens where each treasury bill is a unique NFT that represents the output tokens, which vest over a certain amount of time. Come in two formats: 
@@ -85,7 +83,7 @@ Inspired by a combination of TadFi, DeFi and NFT products. Apeswap's treasury bi
 
 === Initial Ape Offerings (IAOs)
 
-IAOs are fundrasing vehicles used to launch new tokens and bring in liquidity using BNB or GNANA. Aftern and IAO conlcuded, the project will receive BNB, and ApeSwap converts the raised GNANA to BANANA and then burns it. IOAs employ the *Overflow* model which ensures that the more you commit to an IAO, the more partner tokens you will receive.
+IAOs are fundrasing vehicles used to launch new tokens and bring in liquidity using BNB or GNANA. After an IAO conlcuded, the project will receive BNB, and ApeSwap converts the raised GNANA to BANANA and then burns it. IOAs employ the *Overflow* model which ensures that the more you commit to an IAO, the more partner tokens you will receive.
 
 === https://ape-swap.medium.com/self-serve-iaos-how-to-dyor-7c63a68696ad[Self-Serve IAO (SS-IAO)] 
 

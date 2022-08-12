@@ -38,5 +38,8 @@ class WithdrawAction(Action):
     def get_type(self):
         return self.__token_event.type_of()
     
+    def set_event(self, event):
+        self.__token_event = event       
+    
     
         

@@ -27,6 +27,9 @@ class DepositAction(Action):
 
     def get_event(self):
         return self.__token_event
+    
+    def set_event(self, event):
+        self.__token_event = event    
 
     def get_user(self):
         return self.__user

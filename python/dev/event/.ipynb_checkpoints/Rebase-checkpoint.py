@@ -20,5 +20,11 @@ class Rebase(TokenEvent):
     def get_address(self):
         return self.__address
     
+    def set_delta(self, delta):
+        self.__delta = delta     
+        
+    def set_time_delta(self, time_delta):
+        self.__t_delta = time_delta     
+    
     def type_of(self):
         return TokenEvent.EVENT_REBASE

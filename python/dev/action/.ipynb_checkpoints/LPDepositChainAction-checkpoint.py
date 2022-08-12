@@ -10,7 +10,7 @@ class LPDepositChainAction(Action):
     
     def __init__(self, action1, action2, target, user, mint_id = None):
         self.__action1 = action1
-        self.__action2 = action2
+        self.__action2 = action2 
         self.__target = target
         self.__user = user
         self.__mint_id = mint_id        
@@ -37,11 +37,19 @@ class LPDepositChainAction(Action):
     def get_target(self):
         return self.__target    
         
-    def get_type(self):
-        return TokenEvent.EVENT_DEPOSIT      
-
-    def apply(self, agents):
+    def get_action1(self):
+        return  self.__action1   
+    
+    def get_action2(self):
+        return  self.__action2       
         
+    def get_type(self):
+        return TokenEvent.EVENT_LP_DEPOSIT_CHAIN  
+    
+    def set_event(self, event):
+        self.__token_event = event 
+        
+    def apply(self, agents):      
         mint_id = self.get_mint_id()   
         token = self.get_target().get_token()        
         address = self.get_target().get_address(mint_id) 

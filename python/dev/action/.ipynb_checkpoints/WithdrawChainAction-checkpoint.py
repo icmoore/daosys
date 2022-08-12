@@ -26,7 +26,7 @@ class WithdrawChainAction(Action):
         return self.__target    
         
     def get_type(self):
-        return TokenEvent.EVENT_WITHDRAW     
+        return TokenEvent.EVENT_WITHDRAW_CHAIN     
 
     def apply(self, agents):
         

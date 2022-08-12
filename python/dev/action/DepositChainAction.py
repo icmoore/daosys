@@ -35,7 +35,10 @@ class DepositChainAction(Action):
         return self.__target    
         
     def get_type(self):
-        return TokenEvent.EVENT_DEPOSIT      
+        return TokenEvent.EVENT_DEPOSIT_CHAIN   
+    
+    def set_event(self, event):
+        self.__token_event = event      
 
     def apply(self, agents):
         

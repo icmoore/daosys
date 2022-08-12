@@ -2,7 +2,12 @@ from python.dev.event import TokenEvent
 from python.dev.lp.event import MintLPEvent
 from python.dev.lp.event import DepositLPEvent
 from python.dev.lp.event import SwapLPEvent
+
+from python.dev.event import Deposit
+from python.dev.action import DepositAction
+from python.dev.helper import CopyAction
 import queue
+
 
 class SimulationOrchestrator():
     
@@ -15,8 +20,7 @@ class SimulationOrchestrator():
         return self.__verbose
          
     def apply(self, action):    
-
-        is_complete = action.apply(self.__agents)   
+        is_complete = action.apply(self.__agents)  
         if(self.__verbose): self.__print_out(action)
         
         return is_complete

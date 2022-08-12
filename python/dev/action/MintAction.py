@@ -3,6 +3,7 @@ from python.dev.token import NonRebaseToken
 from python.dev.action import Action
 from python.dev.event import Mint
 from python.dev.agent import Agent
+from python.dev.event import TokenEvent
 
 
 class  MintAction(Action):
@@ -47,7 +48,7 @@ class  MintAction(Action):
         return self.__mint_id          
         
     def get_type(self):
-        return self.__token_event.type_of()
+        return TokenEvent.EVENT_MINT
     
     
         

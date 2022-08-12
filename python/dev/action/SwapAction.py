@@ -42,7 +42,7 @@ class SwapAction(Action):
           
         
     def get_type(self):
-        return self.__token_event.type_of()
+        return TokenEvent.EVENT_SWAP
     
     
         

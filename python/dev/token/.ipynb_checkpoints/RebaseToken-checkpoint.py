@@ -64,6 +64,7 @@ class RebaseToken(Token):
     
         self.__clock.update(clock_update_delta)                
         supply.rebase(delta)  
+    
                 
         
         

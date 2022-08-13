@@ -20,7 +20,7 @@ class ActionInfo():
         delta = abs(action.get_event().get_delta())
         user = action.get_user().get_name()
         action_type = action.get_type()
-        print('{} will {} {:.2f} {} '.format(user, action_type, delta, coin)) 
+        print('{} {}s {:.2f} {} '.format(user, action_type, delta, coin)) 
     
     def __deposit_withdraw(self, action, show_delta):  
         coin = action.get_target().get_name()
@@ -28,9 +28,9 @@ class ActionInfo():
         user = action.get_user().get_name()
         action_type = action.get_type()   
         if(show_delta):
-            print('{} will {} {:.2f} {} '.format(user, action_type, delta, coin)) 
+            print('{} {}s {:.2f} {} '.format(user, action_type, delta, coin)) 
         else: 
-            print('{} will {} {} '.format(user, action_type, coin))
+            print('{} {}s {} '.format(user, action_type, coin))
             
     def __swap(self, action, show_delta):
         user = action.get_user().get_name()
@@ -39,9 +39,9 @@ class ActionInfo():
         to_coin = action.get_target('DEPOSIT').get_name()
         delta = abs(action.get_event().get_delta())
         if(show_delta):
-            print('{} will {} {:.2f} {} for {} '.format(user, action_type, delta, from_coin, to_coin))
+            print('{} {}s {:.2f} {} for {} '.format(user, action_type, delta, from_coin, to_coin))
         else:
-            print('{} will {} {} for {} '.format(user, action_type, from_coin, to_coin))
+            print('{} {}s {} for {} '.format(user, action_type, from_coin, to_coin))
             
         
     def __withdraw_chain(self, action, show_delta):
@@ -50,9 +50,9 @@ class ActionInfo():
         action_type = action.get_type()
         delta = abs(action.get_event().get_delta())
         if(show_delta):
-            print('{} will WITHDRAW {:.2f} proceeds'.format(user, delta, coin))
+            print('{} WITHDRAWs {:.2f} from {} proceeds'.format(user, delta, coin))
         else:
-            print('{} will WITHDRAW {} proceeds'.format(user, coin))
+            print('{} WITHDRAWs {} proceeds'.format(user, coin))
             
         
     def __lp_deposit_chain(self, action, show_delta):
@@ -63,8 +63,8 @@ class ActionInfo():
         coin2 = action.get_action2().get_target().get_name()
         delta = abs(action.get_event().get_delta())
         if(show_delta):
-            print('{} will DEPOSIT {:.2f} {} from {} and {} proceeds'.format(user, delta, lp, coin1, coin2))
+            print('{} DEPOSITs {:.2f} {} from {} and {} proceeds'.format(user, delta, lp, coin1, coin2))
         else:
-            print('{} will DEPOSIT {} and {} proceeds into {}'.format(user, coin1, coin2, lp))
+            print('{} DEPOSITs {} and {} proceeds into {}'.format(user, coin1, coin2, lp))
              
                    

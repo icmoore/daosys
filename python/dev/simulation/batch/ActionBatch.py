@@ -66,10 +66,11 @@ class ActionBatch():
     
     def __unpack_actions(self, arr):      
         actions = []
-        for event in arr:
+        for action in arr:
             action = CopyAction().apply(action, True)
-            if(self.__inspect_action(action)): break
-            actions.append(action)  
+            if(self.__inspect_action(action)): 
+                actions.append(action)
+              
         return actions 
     
     def __inspect_action(self, action):

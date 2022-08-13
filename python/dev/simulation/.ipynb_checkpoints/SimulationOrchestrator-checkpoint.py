@@ -6,6 +6,7 @@ from python.dev.lp.event import SwapLPEvent
 from python.dev.event import Deposit
 from python.dev.action import DepositAction
 from python.dev.helper import CopyAction
+from python.dev.helper import ActionInfo
 import queue
 
 
@@ -29,12 +30,6 @@ class SimulationOrchestrator():
         self.__agents[target.get_name()] = target 
 
     def __print_out(self, action):
-        user = action.get_user().get_name()
-        name = action.get_target().get_name()
-        t_delta = abs(action.get_event().get_time_delta())
-        delta = abs(action.get_event().get_delta())
-        mint_id = action.get_mint_id()    
-        action_type = action.get_type()
-        address = action.get_target().get_address(mint_id)         
-        print('{} {} {} for {}'.format(action_type, delta, name, user))         
+        ActionInfo().printout(action)
+       
         

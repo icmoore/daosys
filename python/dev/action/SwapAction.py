@@ -5,7 +5,7 @@ from python.dev.event import TokenEvent
 class SwapAction(Action):
     
     ACTION_TYPE_WITHDRAW = 'WITHDRAW'
-    ACTION_TYPE_DEPOSIT = 'DEPOSIT '
+    ACTION_TYPE_DEPOSIT = 'DEPOSIT'
     
     def __init__(self, withdraw_action, deposit_action):
         

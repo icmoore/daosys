@@ -13,13 +13,13 @@ class Withdraw(TokenEvent):
         self.__apy = apy
         self.__address = address if address != None else address
  
-    def get_time_delta(self, peek = False):
+    def get_time_delta(self, peek = True):
         return self.__getVal(self.__t_delta, peek) 
        
-    def get_delta(self, peek = False):
+    def get_delta(self, peek = True):
         return -self.__getVal(self.__delta, peek) 
     
-    def get_apy(self, peek = False):
+    def get_apy(self, peek = True):
         return self.__getVal(self.__apy, peek) 
 
     def get_address(self):
@@ -43,7 +43,7 @@ class Withdraw(TokenEvent):
     def __isNumeric(self, obj):  
         return type(obj) == int or type(obj) == float or type(obj) == np.float64
 
-    def __getVal(self, obj, peek = False):
+    def __getVal(self, obj, peek = True):
         if(self.__isNumeric(obj)):
             return obj
         elif(self.__isQueue(obj)):   

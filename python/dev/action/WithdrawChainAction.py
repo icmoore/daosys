@@ -11,10 +11,10 @@ class WithdrawChainAction(Action):
         self.__action = action
         self.__target = target
         self.__user = user
-        self.__mint_id = mint_id        
+        self.__mint_id = mint_id       
         
     def get_mint_id(self):
-        return self.__mint_id  
+        return self.__mint_id   
 
     def get_event(self):
         return self.__action.get_event()

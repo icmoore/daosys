@@ -11,7 +11,7 @@ class DepositChainAction(Action):
         self.__action = action
         self.__target = target
         self.__user = user
-        self.__mint_id = mint_id        
+        self.__mint_id = mint_id      
         self.__x_target = target.get_x_target()
         self.__y_target = target.get_y_target()
         self.__prev_liquidity_val = 0
@@ -23,7 +23,7 @@ class DepositChainAction(Action):
         self.__prev_liquidity_val = copy.copy(prev_liquidity)
         
     def get_mint_id(self):
-        return self.__mint_id  
+        return self.__mint_id   
 
     def get_event(self):
         return self.__action.get_event()

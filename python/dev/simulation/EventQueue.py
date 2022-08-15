@@ -30,8 +30,20 @@ class EventQueue():
             event =  CopyAction().apply(event, False)
   
     def add_event_batch(self, event_batch):
-        for event in event_batch: 
+        
+        batch_name = event_batch['name']
+        init_events = event_batch['init']   
+        action_batch = event_batch['action']
+        n_batches = event_batch['n_batches']
+        self.__event_batches[batch_name] = event_batch
+        
+        for event in init_events: 
             self.__queue.put(event)
+         
+        for k in range(n_batches):
+            for event in action_batch[k]['set']: 
+                self.__queue.put(event)
+            
                  
         
 

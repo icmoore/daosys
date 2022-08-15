@@ -13,7 +13,7 @@ class LPDepositChainAction(Action):
         self.__action2 = action2 
         self.__target = target
         self.__user = user
-        self.__mint_id = mint_id        
+        self.__mint_id = mint_id       
         self.__x_target = target.get_x_target()
         self.__y_target = target.get_y_target()
         self.__prev_liquidity_val = 0

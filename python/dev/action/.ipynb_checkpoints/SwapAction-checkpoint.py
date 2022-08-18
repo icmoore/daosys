@@ -22,6 +22,12 @@ class SwapAction(Action):
            
         return True
     
+    def get_action1(self):
+        return  self.__withdraw_action   
+    
+    def get_action2(self):
+        return  self.__deposit_action       
+    
     def get_event(self):
         return self.__token_event    
         

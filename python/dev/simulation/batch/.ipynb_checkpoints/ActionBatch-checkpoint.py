@@ -9,7 +9,6 @@ class ActionBatch():
         self.__n_batches = n_batches
         self.__init = []
         self.__actions = []
-        self.__reset_actions = []
         self.__t_deltas = []
         self.__instructions = {}
         self.__batch = {}
@@ -29,9 +28,6 @@ class ActionBatch():
         self.__actions.append(action) 
         self.__set_instruction('actions', self.__actions)
         
-    def reset_actions(self, *actions):  
-        self.__reset_actions = actions
-        self.__set_instruction('reset_actions', actions)
 
     def generate(self):
         self.__batch['name'] = self.__name
@@ -62,21 +58,15 @@ class ActionBatch():
             
         self.__batch_info()  
         
-
     def __get_next_set(self):   
-        actions = self.__unpack_actions(self.__actions)
-        for reset_action in self.__reset_actions:
-            CopyAction().apply(reset_action, False) 
-            #print('delta: {}'.format(reset_action.get_event().get_delta()))
-        return actions    
+        return self.__unpack_actions(self.__actions)    
     
     def __unpack_actions(self, arr):      
         actions = []
         for action in arr:
-            action = CopyAction().apply(action, True)
+            action = CopyAction(actions).apply(action, False)
             if(self.__inspect_action(action)): 
                 actions.append(action)
-              
         return actions 
     
     def __inspect_action(self, action):

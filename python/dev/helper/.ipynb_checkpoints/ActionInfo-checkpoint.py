@@ -31,6 +31,7 @@ class ActionInfo():
         if(show_delta):
             clock = action.get_target().get_token().get_clock()
             t_stamp = clock.get_time_stamp().strftime("%Y-%m-%d %H:%M:%S")
+            #t_stamp = abs(action.get_event().get_time_delta())
             print('[{}] {} {}s {:.2f} {}'.format(t_stamp, user, action_type, delta, coin)) 
         else: 
             print('{} {}s {} '.format(user, action_type, coin))
@@ -40,10 +41,11 @@ class ActionInfo():
         action_type = action.get_type()
         from_coin = action.get_target('WITHDRAW').get_name()
         to_coin = action.get_target('DEPOSIT').get_name()
-        delta = abs(action.get_event().get_delta())
+        delta = abs(action.get_event().get_delta())        
         if(show_delta):
             clock = action.get_target().get_token().get_clock()
             t_stamp = clock.get_time_stamp().strftime("%Y-%m-%d %H:%M:%S")
+            #t_stamp = abs(action.get_event().get_time_delta())
             print('[{}] {} {}s {:.2f} {} for {}'.format(t_stamp, user, action_type, delta, from_coin, to_coin))
         else:
             print('{} {}s {} for {} '.format(user, action_type, from_coin, to_coin))
@@ -57,6 +59,7 @@ class ActionInfo():
         if(show_delta):
             clock = action.get_target().get_token().get_clock()
             t_stamp = clock.get_time_stamp().strftime("%Y-%m-%d %H:%M:%S")
+            #t_stamp = abs(action.get_event().get_time_delta())
             print('[{}] {} WITHDRAWs {:.2f} from {} proceeds'.format(t_stamp, user, delta, coin))
         else:
             print('{} WITHDRAWs {} proceeds'.format(user, coin))
@@ -72,6 +75,7 @@ class ActionInfo():
         if(show_delta):
             clock = action.get_target().get_token().get_clock()
             t_stamp = clock.get_time_stamp().strftime("%Y-%m-%d %H:%M:%S")
+            #t_stamp = abs(action.get_event().get_time_delta())
             print('[{}] {} DEPOSITs {:.2f} {} from {} and {} proceeds'.format(t_stamp, user, delta, lp, coin1, coin2))
         else:
             print('{} DEPOSITs {} and {} proceeds into {}'.format(user, coin1, coin2, lp))

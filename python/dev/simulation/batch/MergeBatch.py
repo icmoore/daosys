@@ -48,7 +48,7 @@ class MergeBatch():
         for k in range(len(res)):
             self.__merge['action'][k] = {}
             name = res[k,1]
-            index = int(res[0,2])
+            index = int(res[k,2])
             self.__merge['action'][k] = self.__batches[name][index]
            
         return self.__merge       

@@ -46,12 +46,13 @@ class ActionBatch():
     def inspect(self):  
               
         if(len(self.__init) != 0):    
-            print('** SETUP **')
+            print('** {} INIT BATCH **'.format(self.__name))
             for action in self.__init:
                 self.__event_info(action)
+            if(len(self.__actions) != 0): print('\n')        
           
         if(len(self.__actions) != 0):
-            print('\n ** BATCH **') 
+            print('** {} ACTION BATCH **'.format(self.__name))
             for action in self.__actions:
                 self.__event_info(action)   
                 self.__inspect_action(action) 
@@ -101,12 +102,7 @@ class ActionBatch():
             print('\n ** RUNTIME for 1st BATCH ** \n{} seconds'.format(self.__t_deltas[-1]))
         elif(len(self.__actions) != 0):    
             print('Error: action batch has no deposit; batch requires at least one deposit')
-            
-        #if(len(self.__init) == 0):  
-        #    print('Error: no init actions')
-            
-        #if(len(self.__actions) == 0):  
-        #    print('Error: no batch actions') 
+
             
             
               

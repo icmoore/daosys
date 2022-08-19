@@ -7,8 +7,12 @@ class MergeBatch():
         self.__name = name
         self.__pq = PriorityQueue()
         self.__len = 0
+        self.__n_action_batches = 0
         self.__batches = {}
         self.__merge = {}
+        
+    def get_n_action_batches(self): 
+        return self.__n_action_batches
      
     def add(self, batch):
         arr = self.get_time(batch)
@@ -17,6 +21,7 @@ class MergeBatch():
         self.__batches[batch_name] = batch['action']
         self.__merge['name'] = self.__name
         self.__merge['n_batches'] = self.__len
+        self.__n_action_batches += 1
     
     def add_queue(self, arr, arr_name):
         N = len(arr)

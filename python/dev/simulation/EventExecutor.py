@@ -18,7 +18,7 @@ class EventExecutor():
             process_queue = self.__queue.get_n_events() != 0 and event_complete
             
     def __print_out(self): 
-        print('======== Action Tasks ===========')
-        print('# num_tasks: {} \n'.format(self.__queue.get_n_events()))          
+        print('======== Action Events ===========')
+        print('# num_events: {} \n'.format(self.__queue.get_n_events()))          
         
         

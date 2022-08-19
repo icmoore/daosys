@@ -13,14 +13,14 @@ class Deposit(TokenEvent):
         self.__apy = apy
         self.__address = address if address != None else address
         
-    def get_time_delta(self, peek = True):
-        return self.__getVal(self.__t_delta, peek) 
+    def get_time_delta(self, reset = False):
+        return self.__getVal(self.__t_delta, reset) 
        
-    def get_delta(self, peek = True):
-        return self.__getVal(self.__delta, peek) 
+    def get_delta(self, reset = False):
+        return self.__getVal(self.__delta, reset) 
     
-    def get_apy(self, peek = True):
-        return self.__getVal(self.__apy, peek) 
+    def get_apy(self, reset = False):
+        return self.__getVal(self.__apy, reset) 
 
     def get_address(self):
         return self.__address
@@ -43,10 +43,10 @@ class Deposit(TokenEvent):
     def __isNumeric(self, obj):  
         return type(obj) == int or type(obj) == float or type(obj) == np.float64
 
-    def __getVal(self, obj, peek = True):
+    def __getVal(self, obj, reset = False):
         if(self.__isNumeric(obj)):
             return obj
         elif(self.__isQueue(obj)):
-            return obj.queue[0] if peek else obj.get()
+            return obj.get() if reset else obj.queue[0]
         else: 
             return None

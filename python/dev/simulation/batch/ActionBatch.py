@@ -1,6 +1,6 @@
 import queue
 from python.dev.helper import CopyAction
-from python.dev.helper import ActionInfo
+from python.dev.helper import ActionLog
 
 class ActionBatch():
     
@@ -28,7 +28,6 @@ class ActionBatch():
         self.__actions.append(action) 
         self.__set_instruction('actions', self.__actions)
         
-
     def generate(self):
         self.__batch['name'] = self.__name
         self.__batch['n_batches'] = self.__n_batches
@@ -43,8 +42,7 @@ class ActionBatch():
     
         return self.__batch
 
-    def inspect(self):  
-              
+    def inspect(self):        
         if(len(self.__init) != 0):    
             print('** {} INIT BATCH **'.format(self.__name))
             for action in self.__init:
@@ -65,7 +63,7 @@ class ActionBatch():
     def __unpack_actions(self, arr):      
         actions = []
         for action in arr:
-            action = CopyAction(actions).apply(action, False)
+            action = CopyAction(actions).apply(action, True)
             if(self.__inspect_action(action)): 
                 actions.append(action)
         return actions 
@@ -92,11 +90,10 @@ class ActionBatch():
         self.__instructions[key] = obj
                                   
     def __event_info(self, action):
-        ActionInfo().printout(action, False)
+        ActionLog().archive(action, False)
     
     
-    def __batch_info(self):
-        
+    def __batch_info(self): 
         if(len(self.__t_deltas) != 0):
             print('\n ** REPEAT BATCH ** \n {} times'.format(self.__n_batches ))
             print('\n ** RUNTIME for 1st BATCH ** \n{} seconds'.format(self.__t_deltas[-1]))

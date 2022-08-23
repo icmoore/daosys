@@ -66,26 +66,25 @@ class LPDepositChainAction(Action):
         delta2 = abs(self.get_event(self.__action2).get_delta()) 
         
         lp_delta = self.__calc_delta(token_index, delta1, delta2)
-        
+
         event = Deposit(apy, lp_delta, t_delta, address)
-        
+        token.add_event(event)  
         self.__update_lp(event)
-        token.add_event(event)                
-        
+    
         self.get_target().set_token(token) 
         self.get_target().update_token_index(address)
         
         return True
     
     
-    def __update_lp(self, event):
-        
+    def __update_lp(self, event):        
         lp = self.get_target().get_lp()
         target = self.__target
         user = self.__user
         mint_id = self.__mint_id
-        action = DepositAction(event, target, user, mint_id)    
+        action = DepositAction(event, target, user, mint_id)      
         lp.update_event(DepositLPEvent(action))
+        
 
     def __calc_delta(self, index, delta1, delta2):
             
@@ -96,8 +95,7 @@ class LPDepositChainAction(Action):
         
         if(index == 0):
             delta = np.sqrt(delta1*delta2)
-        else:
-                
+        else:          
             reserve1 = lp_events.get_event(-1).get_liquidity().get_x_real()
             reserve2 = lp_events.get_event(-1).get_liquidity().get_y_real()
             liq_val = lp_events.get_event(-1).get_liquidity().get_liquidity_val()
@@ -106,6 +104,7 @@ class LPDepositChainAction(Action):
             liq2 = delta2*liq_val/reserve2
             
             delta = min(liq1,liq2)
+
                                
         return delta        
         

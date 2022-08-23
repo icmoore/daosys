@@ -2,6 +2,8 @@ from python.dev.lp.event import LPEvent
 from python.dev.event import Mint
 import copy
 
+from datetime import datetime
+
 class DepositLPEvent(LPEvent):
 
      
@@ -19,7 +21,6 @@ class DepositLPEvent(LPEvent):
         token_type = target.get_token_type()
         token_name = target.get_name()
         token_address = self.__retrieve_address()
-        #target.update_token_index(token_address)
         
         if(token_type == Mint.TYPE_REBASE):       
             token_yield = self.__retrieve_token_yield(token_address)
@@ -34,6 +35,10 @@ class DepositLPEvent(LPEvent):
             if(token_name == y_name): liquidity.delta_y(token_delta)
           
         L = liquidity.calc()
+
+        token = self.__deposit_action.get_target().get_token()
+        tstamp = token.get_state_series(token_address).get_last_state().get_timestamp()
+        tstamp = datetime.fromtimestamp(tstamp).strftime("%Y-%m-%d %H:%M:%S")
 
         self.set_liquidity(liquidity)
     

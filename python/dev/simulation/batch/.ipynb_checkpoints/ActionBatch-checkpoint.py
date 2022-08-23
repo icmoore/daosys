@@ -1,6 +1,7 @@
 import queue
 from python.dev.helper import CopyAction
 from python.dev.helper import ActionLog
+from python.dev.event import TokenEvent
 
 class ActionBatch():
     
@@ -74,13 +75,14 @@ class ActionBatch():
         t_delta = abs(action.get_event().get_time_delta())
         coin = action.get_target().get_name()
         
-        if(action_type == 'DEPOSIT' and t_delta == 0):
+        if(action_type == TokenEvent.EVENT_DEPOSIT and t_delta == 0):
             print('Error: DEPOSIT into {} must have non-zero time delta'.format(coin))
             return False
-        elif(action_type == 'DEPOSIT' and t_delta != 0): 
+        elif(action_type == TokenEvent.EVENT_DEPOSIT and t_delta != 0): 
             self.__t_deltas.append(t_delta)
         
-        if(action_type == 'DEPOSIT' and len(self.__t_deltas) != 0 and t_delta != self.__t_deltas[-1]):
+        if(action_type == TokenEvent.EVENT_DEPOSIT and len(self.__t_deltas) != 0 and 
+           t_delta != self.__t_deltas[-1]):
             print('Error: time delta for {} not homogenous with other deposits'.format(coin))
             return False
         

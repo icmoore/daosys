@@ -25,6 +25,9 @@ class ActionLog():
             self.__lp_deposit_chain(action, index, show_delta)  
         
     def print_logs(self, user = None):
+        print('======== Log Events ===========')
+        print('# num_events: {} \n'.format(len(self.__a_log)))          
+        
         user_name = None if user == None else user.get_name() 
         for index in self.__a_log:    
             if(user_name == None):

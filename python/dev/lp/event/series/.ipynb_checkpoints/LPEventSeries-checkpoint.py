@@ -79,9 +79,10 @@ class LPEventSeries():
         self.__unix_time_stamps.append(unix_time_stamp)
 
     def __retrieve_time_stamp(self, address):
-        index = self.get_last_event().get_action().get_target().get_token_index(address)
-        token = self.get_last_event().get_action().get_target().get_token() 
-        return token.get_state_series(address).get_state(index).get_timestamp()  
+        #index = self.get_last_event().get_action().get_target().get_token_index(address)
+        token = self.get_last_event().get_action().get_target().get_token()
+        #return token.get_state_series(address).get_state(index).get_timestamp()
+        return token.get_state_series(address).get_last_state().get_timestamp()
     
     def __retrieve_address(self):
         action = self.get_last_event().get_action()

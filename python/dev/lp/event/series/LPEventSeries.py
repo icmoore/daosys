@@ -17,16 +17,16 @@ class LPEventSeries():
         return self.__name 
 
     def get_liquidity_values(self):            
-        return self.__liquidity_values 
+        return np.array(self.__liquidity_values) 
 
     def get_prices(self):            
-        return self.__prices    
+        return np.array(self.__prices)    
     
     def get_dates(self):            
-        return self.__dates     
+        return np.array(self.__dates)     
     
     def get_unix_time_stamps(self):            
-        return self.__unix_time_stamps      
+        return np.array(self.__unix_time_stamps)      
   
     def get_events(self):
         return self.__events 
@@ -46,7 +46,7 @@ class LPEventSeries():
     def gen_yields(self, apy):
         t_deltas = np.diff(self.__unix_time_stamps)
         balances = self.__liquidity_values[1:]        
-        return list(Yield().apply(balances, t_deltas, apy))        
+        return Yield().apply(balances, t_deltas, apy)      
     
     def gen_yield_balances(self, apy):
         t_deltas = np.diff(self.__unix_time_stamps)
@@ -54,7 +54,7 @@ class LPEventSeries():
         yields = Yield().apply(balances, t_deltas, apy)  
         balances = list(balances + np.cumsum(yields))
         balances.insert(0, self.__liquidity_values[0]) 
-        return balances
+        return np.array(balances)
     
     def add_event(self, event): 
         self.__events.append(copy.copy(event)) 

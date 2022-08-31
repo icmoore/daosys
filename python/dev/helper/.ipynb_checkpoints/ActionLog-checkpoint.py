@@ -50,6 +50,14 @@ class ActionLog():
                    
     def get_logs(self):
         return self.__a_log
+    
+    def __get_current_banlance(self, action):
+        token_agent = action.get_target()
+        mint_id = action.get_mint_id()
+        addresses = token_agent.get_addresses()
+        address = None if len(addresses) == 0 else token_agent.get_address(mint_id)    
+        balance = 0 if address == None else token_agent.get_token().get_balance_deposits([address])      
+        return balance
      
     def __log_index(self):
         index = len(self.__a_log) 
@@ -61,6 +69,7 @@ class ActionLog():
         self.__a_log[index]['delta'] = abs(action.get_event().get_delta())
         self.__a_log[index]['user'] = action.get_user().get_name()
         self.__a_log[index]['action_type'] = action.get_type()
+        self.__a_log[index]['coin_balance'] = self.__get_current_banlance(action)
         
 
     def __deposit_withdraw(self, action, index, show_delta): 
@@ -68,6 +77,8 @@ class ActionLog():
         self.__a_log[index]['delta'] = abs(action.get_event().get_delta())
         self.__a_log[index]['user'] = action.get_user().get_name()
         self.__a_log[index]['action_type'] = action.get_type()   
+        self.__a_log[index]['coin_balance'] = self.__get_current_banlance(action)
+        
         if(show_delta):
             clock = action.get_target().get_token().get_clock()
             self.__a_log[index]['t_stamp'] = clock.get_time_stamp().strftime("%Y-%m-%d %H:%M:%S")
@@ -77,7 +88,8 @@ class ActionLog():
         self.__a_log[index]['action_type'] = action.get_type()
         self.__a_log[index]['from_coin'] = action.get_target('WITHDRAW').get_name()
         self.__a_log[index]['to_coin'] = action.get_target('DEPOSIT').get_name()
-        self.__a_log[index]['delta'] = abs(action.get_event().get_delta())        
+        self.__a_log[index]['delta'] = abs(action.get_event().get_delta())    
+        self.__a_log[index]['coin_balance'] = self.__get_current_banlance(action)
         if(show_delta):
             clock = action.get_target().get_token().get_clock()
             self.__a_log[index]['t_stamp'] = clock.get_time_stamp().strftime("%Y-%m-%d %H:%M:%S")       
@@ -87,6 +99,7 @@ class ActionLog():
         self.__a_log[index]['user'] = action.get_user().get_name()
         self.__a_log[index]['action_type'] = action.get_type()
         self.__a_log[index]['delta'] = abs(action.get_event().get_delta())
+        self.__a_log[index]['coin_balance'] = self.__get_current_banlance(action)
         if(show_delta):
             clock = action.get_target().get_token().get_clock()
             self.__a_log[index]['t_stamp'] = clock.get_time_stamp().strftime("%Y-%m-%d %H:%M:%S")
@@ -98,6 +111,7 @@ class ActionLog():
         self.__a_log[index]['coin1'] = action.get_action1().get_target().get_name()
         self.__a_log[index]['coin2'] = action.get_action2().get_target().get_name()
         self.__a_log[index]['delta'] = abs(action.get_event().get_delta())
+        self.__a_log[index]['coin_balance'] = self.__get_current_banlance(action)
         if(show_delta):
             clock = action.get_target().get_token().get_clock()
             self.__a_log[index]['t_stamp'] = clock.get_time_stamp().strftime("%Y-%m-%d %H:%M:%S")
@@ -110,11 +124,12 @@ class ActionLog():
         
     def __print_deposit_withdraw(self, index, show_delta): 
         if(show_delta):
-            print('[{}] {} {}s {:.2f} {}'.format(self.__a_log[index]['t_stamp'], 
+            print('[{}] {} {}s {:.2f} {} [{:.0f} TOTAL TOKEN]'.format(self.__a_log[index]['t_stamp'], 
                                                  self.__a_log[index]['user'], 
                                                  self.__a_log[index]['action_type'], 
                                                  self.__a_log[index]['delta'], 
-                                                 self.__a_log[index]['coin'])) 
+                                                 self.__a_log[index]['coin'],
+                                                 self.__a_log[index]['coin_balance'])) 
         else: 
             print('{} {}s {} '.format(self.__a_log[index]['user'],
                                       self.__a_log[index]['action_type'], 
@@ -146,12 +161,13 @@ class ActionLog():
             
     def __print_lp_deposit_chain(self, index, show_delta): 
         if(show_delta):
-            print('[{}] {} DEPOSITs {:.2f} {} from {} and {} proceeds'.format(self.__a_log[index]['t_stamp'], 
+            print('[{}] {} DEPOSITs {:.2f} {} from {} and {} proceeds [{:.0f} TOTAL LP]'.format(self.__a_log[index]['t_stamp'], 
                                                                               self.__a_log[index]['user'], 
                                                                               self.__a_log[index]['delta'], 
                                                                               self.__a_log[index]['lp'], 
                                                                               self.__a_log[index]['coin1'], 
-                                                                              self.__a_log[index]['coin2']))
+                                                                              self.__a_log[index]['coin2'],
+                                                                              self.__a_log[index]['coin_balance']))
         else:
             print('{} DEPOSITs {} and {} proceeds into {}'.format(self.__a_log[index]['user'], 
                                                                   self.__a_log[index]['coin1'], 

@@ -104,6 +104,7 @@ class LPDepositChainAction(Action):
             liq2 = delta2*liq_val/reserve2
             
             delta = min(liq1,liq2)
+            #delta = liq1 + liq2
 
                                
         return delta        

@@ -40,8 +40,10 @@ class CopyAction():
             
             target = action.get_target()
             user = action.get_user()
-            mint_id = action.get_mint_id()              
-            return DepositAction(event, target, user, mint_id)
+            mint_id = action.get_mint_id()  
+            action = DepositAction(event, target, user, mint_id)
+            time_delta = action.get_event().get_time_delta()
+            return action
         
         def __copy_withdraw_action(self, action, reset = True): 
                     

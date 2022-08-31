@@ -73,11 +73,13 @@ class ActionBatch():
         
         action_type = action.get_type()
         t_delta = abs(action.get_event().get_time_delta())
+        #print('time delta {}'.format(action_type, t_delta))
         coin = action.get_target().get_name()
         
         if(action_type == TokenEvent.EVENT_DEPOSIT and t_delta == 0):
-            print('Error: DEPOSIT into {} must have non-zero time delta'.format(coin))
-            return False
+            #print('Error: DEPOSIT into {} must have non-zero time delta'.format(coin))
+            #return False
+            self.__t_deltas.append(t_delta)
         elif(action_type == TokenEvent.EVENT_DEPOSIT and t_delta != 0): 
             self.__t_deltas.append(t_delta)
         

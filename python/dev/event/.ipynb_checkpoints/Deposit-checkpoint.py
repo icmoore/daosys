@@ -41,9 +41,10 @@ class Deposit(TokenEvent):
         return type(obj) == queue.Queue 
 
     def __isNumeric(self, obj):  
-        return type(obj) == int or type(obj) == float or type(obj) == np.float64
+        return type(obj) == int or type(obj) == float or type(obj) == np.float64 or type(obj) == np.int64
 
     def __getVal(self, obj, reset = False):
+
         if(self.__isNumeric(obj)):
             return obj
         elif(self.__isQueue(obj)):

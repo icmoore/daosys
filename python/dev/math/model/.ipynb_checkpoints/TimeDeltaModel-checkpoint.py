@@ -19,7 +19,7 @@ class TimeDeltaModel():
                 rval = np.random.negative_binomial(1, p)
                 res.append(rval)
                 
-            return res              
+            return np.array(res)              
 
             
  

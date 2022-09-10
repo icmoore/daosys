@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.3)  8 SEP 2022 18:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.3)  9 SEP 2022 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -530,24 +530,13 @@ Underfull \vbox (badness 3029) has occurred while \output is active []
 
 Package xcolor Warning: Incompatible color definition on input line 58.
 
-<img/governance.png, id=4, 563.10374pt x 583.17876pt>
-File: img/governance.png Graphic file (type png)
-<use img/governance.png>
-Package pdftex.def Info: img/governance.png  used on input line 66.
-(pdftex.def)             Requested size: 216.81pt x 224.53786pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package xcolor Warning: Incompatible color definition on input line 66.
 
-
-Package xcolor Warning: Incompatible color definition on input line 75.
-
-
-Package xcolor Warning: Incompatible color definition on input line 78.
-
-<Logo.png, id=6, 401.5pt x 120.45pt>
+<Logo.png, id=4, 401.5pt x 120.45pt>
 File: Logo.png Graphic file (type png)
 <use Logo.png>
-Package pdftex.def Info: Logo.png  used on input line 78.
+Package pdftex.def Info: Logo.png  used on input line 66.
 (pdftex.def)             Requested size: 91.32pt x 27.39598pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -574,24 +563,44 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
  <./Logo.png> <./bullet.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 79.
+Package xcolor Warning: Incompatible color definition on input line 69.
 
 
-Package xcolor Warning: Incompatible color definition on input line 84.
+Package xcolor Warning: Incompatible color definition on input line 73.
 
 
-Package xcolor Warning: Incompatible color definition on input line 88.
+Package xcolor Warning: Incompatible color definition on input line 77.
 
 
-Package xcolor Warning: Incompatible color definition on input line 96.
+Package xcolor Warning: Incompatible color definition on input line 81.
+
+<img/governance.png, id=16, 563.10374pt x 583.17876pt>
+File: img/governance.png Graphic file (type png)
+<use img/governance.png>
+Package pdftex.def Info: img/governance.png  used on input line 90.
+(pdftex.def)             Requested size: 216.81pt x 224.53786pt.
+
+Package xcolor Warning: Incompatible color definition on input line 95.
 
 
-Package xcolor Warning: Incompatible color definition on input line 101.
+Package xcolor Warning: Incompatible color definition on input line 100.
 
-<notaglineLogo.png, id=18, 401.5pt x 120.45pt>
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 10
+2.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+
+LaTeX Font Warning: Font shape `T1/pcr/n/n' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 106.
+
+<notaglineLogo.png, id=17, 401.5pt x 120.45pt>
 File: notaglineLogo.png Graphic file (type png)
 <use notaglineLogo.png>
-Package pdftex.def Info: notaglineLogo.png  used on input line 105.
+Package pdftex.def Info: notaglineLogo.png  used on input line 109.
 (pdftex.def)             Requested size: 91.32pt x 27.39598pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -610,16 +619,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [2 <./notaglineLogo.png> <./img/governance.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 106.
-
-
-Package xcolor Warning: Incompatible color definition on input line 110.
-
-
-Package xcolor Warning: Incompatible color definition on input line 113.
-
-
-Package xcolor Warning: Incompatible color definition on input line 117.
+Package xcolor Warning: Incompatible color definition on input line 116.
 
 
 Package xcolor Warning: Incompatible color definition on input line 121.
@@ -627,9 +627,15 @@ Package xcolor Warning: Incompatible color definition on input line 121.
 
 Package xcolor Warning: Incompatible color definition on input line 125.
 
+
+Package xcolor Warning: Incompatible color definition on input line 128.
+
+
+Package xcolor Warning: Incompatible color definition on input line 132.
+
 File: notaglineLogo.png Graphic file (type png)
 <use notaglineLogo.png>
-Package pdftex.def Info: notaglineLogo.png  used on input line 128.
+Package pdftex.def Info: notaglineLogo.png  used on input line 132.
 (pdftex.def)             Requested size: 91.32pt x 27.39598pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -648,35 +654,46 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [3]
 
-Package xcolor Warning: Incompatible color definition on input line 131.
+Package xcolor Warning: Incompatible color definition on input line 136.
 
 
-Package xcolor Warning: Incompatible color definition on input line 135.
+Package xcolor Warning: Incompatible color definition on input line 140.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Package xcolor Warning: Incompatible color definition on input line 146.
+
+
+Package lineno Warning: Linenumber reference failed, 
+(lineno)                rerun to get it right.
+
+<img/diamonds.png, id=29, 483.8075pt x 433.62pt>
+File: img/diamonds.png Graphic file (type png)
+<use img/diamonds.png>
+Package pdftex.def Info: img/diamonds.png  used on input line 156.
+(pdftex.def)             Requested size: 216.81pt x 194.31998pt.
+
+Package xcolor Warning: Incompatible color definition on input line 161.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 []\T1/ptm/m/n/7.61 D. Siegel, \T1/ptm/m/it/7.61 Un-der-stand-ing The DAO At-tac
 k\T1/ptm/m/n/7.61 , Coin-desk,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 \T1/ptm/m/n/7.61 Aug. 2022. Ac-cessed on: Sept 2022. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 \T1/ptm/m/n/7.61 https://www.coindesk.com/learn/2016/06/25/understanding-the-da
 o-
  []
 
-File: bullet.png Graphic file (type png)
-<use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 148.
-(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglineLogo.png Graphic file (type png)
 <use notaglineLogo.png>
-Package pdftex.def Info: notaglineLogo.png  used on input line 150.
+Package pdftex.def Info: notaglineLogo.png  used on input line 174.
 (pdftex.def)             Requested size: 91.32pt x 27.39598pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -693,7 +710,31 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[4
+[4 <./img/diamonds.png>]
+File: bullet.png Graphic file (type png)
+<use bullet.png>
+Package pdftex.def Info: bullet.png  used on input line 182.
+(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
+File: notaglineLogo.png Graphic file (type png)
+<use notaglineLogo.png>
+Package pdftex.def Info: notaglineLogo.png  used on input line 184.
+(pdftex.def)             Requested size: 91.32pt x 27.39598pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[5
 
 ] (./article.aux)
 
@@ -701,24 +742,25 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7046 strings out of 478994
- 113236 string characters out of 5858185
- 691663 words of memory out of 5000000
- 24390 multiletter control sequences out of 15000+600000
- 481502 words of font info for 129 fonts, out of 8000000 for 9000
+ 7092 strings out of 478994
+ 113873 string characters out of 5858185
+ 692654 words of memory out of 5000000
+ 24430 multiletter control sequences out of 15000+600000
+ 482123 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,12n,117p,738b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,12n,117p,784b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
-2021/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2021/t
-exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-di
-st/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2021/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/u
-rw/times/utmri8a.pfb>
-Output written on article.pdf (4 pages, 106585 bytes).
+exlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/tex
+mf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2021/texmf-dis
+t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
+/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on article.pdf (5 pages, 147649 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 34 words of extra memory for PDF output out of 10000 (max. 10000000)
 

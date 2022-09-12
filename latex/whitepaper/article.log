@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.3)  9 SEP 2022 17:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.3)  12 SEP 2022 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -524,19 +524,15 @@ Overfull \hbox (9.2679pt too wide) in paragraph at lines 47--47
 Package xcolor Warning: Incompatible color definition on input line 49.
 
 
-Underfull \vbox (badness 3029) has occurred while \output is active []
-
-
-
 Package xcolor Warning: Incompatible color definition on input line 58.
 
 
-Package xcolor Warning: Incompatible color definition on input line 66.
+Package xcolor Warning: Incompatible color definition on input line 68.
 
 <Logo.png, id=4, 401.5pt x 120.45pt>
 File: Logo.png Graphic file (type png)
 <use Logo.png>
-Package pdftex.def Info: Logo.png  used on input line 66.
+Package pdftex.def Info: Logo.png  used on input line 68.
 (pdftex.def)             Requested size: 91.32pt x 27.39598pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -662,10 +658,6 @@ Package xcolor Warning: Incompatible color definition on input line 140.
 
 Package xcolor Warning: Incompatible color definition on input line 146.
 
-
-Package lineno Warning: Linenumber reference failed, 
-(lineno)                rerun to get it right.
-
 <img/diamonds.png, id=29, 483.8075pt x 433.62pt>
 File: img/diamonds.png Graphic file (type png)
 <use img/diamonds.png>
@@ -742,10 +734,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7092 strings out of 478994
- 113873 string characters out of 5858185
- 692654 words of memory out of 5000000
- 24430 multiletter control sequences out of 15000+600000
+ 7094 strings out of 478994
+ 113886 string characters out of 5858185
+ 692678 words of memory out of 5000000
+ 24432 multiletter control sequences out of 15000+600000
  482123 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,12n,117p,784b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -757,7 +749,7 @@ t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on article.pdf (5 pages, 147649 bytes).
+Output written on article.pdf (5 pages, 147199 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream

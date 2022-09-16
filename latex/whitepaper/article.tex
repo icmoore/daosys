@@ -29,17 +29,17 @@
 \tfootnote{}
 
 \markboth
-{Cyotee \headeretal: DAOSYS: An Autonomous Service Engine for Decentralized Finance}
-{Cyotee \headeretal: DAOSYS: An Autonomous Service Engine for Decentralized Finance}
+{Cyotee \headeretal: DAOSYS: Smart DAO Protocol for Decentralized Finance}
+{Cyotee \headeretal: DAOSYS: Smart DAO Protocol for Decentralized Finance}
 
 \corresp{}
 
 \begin{abstract}
-Despite popular perception, treasuries of Dentralized Autonomous Organizations (DAOs) tend to be centrally controlled and do not reflect the true ethos of cryptocurrency (i.e., \textit{not your keys, not your coins}). DAOSYS solves this problem with its new Autonomous Service Engine (ASE) technology by deploying a reference platform for self-sovereign capital coordination. This is made possible by innovating on the multi-faceted proxy standard defined in EIP-2535. The ASE will serve as the cornerstone of all SYS Labs decentralized finance (DeFi) products, as supported by the Syscoin Platform.
+Despite popular perception, treasuries of Dentralized Autonomous Organizations (DAOs) tend to be centrally controlled and do not reflect the true ethos of cryptocurrency (i.e., \textit{not your keys, not your coins}). DAOSYS solves this problem with its new Autonomous Service Engine (ASE) technology by deploying a reference platform for self-sovereign capital coordination. Through the ASE, the DAOSYS token will serve as a protocol layer creating a fully backed non-speculative asset allowing for quick seamless deployment of child DAOs in a secure manner. This is made possible by innovating on the multi-faceted proxy standard defined in EIP-2535. The ASE will serve as the cornerstone of all SYS Labs decentralized finance (DeFi) products, as supported by the Syscoin Platform.
 \end{abstract}
 
 \begin{keywords}
-DAOSYS, Decentralized Autonomous Organization, Decentralized Finance, SYS Labs, EIP-2535
+DAOSYS, Smart DAO, Decentralized Finance, Hyper-diamond proxy, EIP-2535
 \end{keywords}
 
 \titlepgskip=-15pt
@@ -53,7 +53,27 @@ The objective of a decentralized autonomous organization (DAO) is to solve the p
 
 The first inception of the DAO concept happened in May 2016 out of the Ethereum community, which was known as Genesis DAO, and was built as a smart contract on the Ethereum blockchain. However, this resulted in the well known DAO Hack which resulted in the draining of \$60M USD worth of funds from its treasury \cite{Sie22}. Today, there are many DAOs in operation with Uniswap, Aave and Maker DAO being amongst the most popular. However, these DAOs still fundamentally violate the core value proposition of self sovereignty that crypto currency promises, where DAOs currently take ownership of capital managed in a treasury controlled by a few individuals. This is the problem that DAOSYS intends to address.
 
-DAOSYS vision is to operate like a pure automated market maker (AMM) and be implemented in a manner that does not require external controls. In 2018, Uniswap became the first decentralized platform to successfully utilize an AMM \cite{Uni19}. However, like Uniswap and many AMMs, control of the capital in their respective liquidity pools is still centralized. DAOSYS intends to address this core issue via its new Autonomous Service Engine (ASE) technology \cite{Sys22}, hence allowing DAOs to be more autonomous and fully decentralized. One of the interesting by-products of this technology will allow users to test, implement and realize countless decentralized finance (DeFi) usecase designs through the ASE without having to continually redeploy new builds.
+DAOSYS vision is to operate like a pure automated market maker (AMM) and be implemented in a manner that does not require external controls. In 2018, Uniswap became the first decentralized platform to successfully utilize an AMM \cite{Uni19}. However, like Uniswap and many AMMs, control of the capital in their respective liquidity pools is still centralized. DAOSYS intends to address this core issue via its new Autonomous Service Engine (ASE) technology \cite{Sys22}, hence allowing DAOs to be more autonomous and fully decentralized. The DAOSYS token is a smart DAO protocol that fully backed by an index of assets supported by its child DAOs. This technology is it will allow users to test, implement and realize countless decentralized finance (DeFi) usecase designs deployed in a secure manner through the ASE without having to continually redeploy new builds.
+
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/smart_dao.png}
+\caption{DAOSYS as the smart DAO protocol, utilizing the hyper-diamond proxy; see EIP-2353 in Appendix A} 
+\label{fig:daosys_governance}
+\end{figure}
+
+Here are the following features that DAOSYS will have:
+
+\begin{itemize}
+  \item SMART DAO protocol
+  \item Self-sovereign via trustless automatic integration
+  \item Seamless fast deployment
+  \item Hyper-diamond standard
+  \item Collateralized VE (vesting) indexing token
+  \item Automated audits of child DAOs
+  \item Fully backed (eg, DAI, SYS)
+  \item Non-spectualtive asset
+  \item Potential emergent behavior (eg, index tokens)
+\end{itemize}  
 
 \section{Governance}
 \label{sec:governance}
@@ -113,12 +133,18 @@ This means that the deployment process for new Services deviates from industry s
 
 All Services are required to implement ERC-165 including the Service extension that enumerates the functions. The Service extension to ERC-165 includes a per interface enumeration of the function selectors that define the interface ID. Additionally, there is an enumeration of all the function selectors across all interface IDs, and a ServiceDef struct that includes the information for initializing a Service Proxy to consume the Service.
 
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/hyper_facet.png}
+\caption{Hyper-facet} 
+\label{fig:hyper_facet}
+\end{figure} 
+
 \section{Tokenomics}
 \label{sec:tokenomics}
 
 \lipsum[1]
 
-\subsection{Simulator}
+\subsection{Python Simulator}
 
 \lipsum[2-4]
 
@@ -131,11 +157,78 @@ All Services are required to implement ERC-165 including the Service extension t
 
 \subsection{L2: NEVM}
 
+In Dec 2021, Syscoin released the first stage of its Network Enhanced Virtual Machine (NEVM) which utilizes the Ethereum Virtual Machine (EVM). In the coming months (from the time of this publication), this will include a Zero Knowledge Proof (ZKP) system to build layer 2 (L2) scalable applications, and one of the first of these applications will be DAOSYS.
+
+\subsection{Usecases}
+
+\subsubsection{Masternode Yield Farming}
+
+Yield farming is a technique that uses DeFi to maximize returns where investors submit liquidity to a decentralized application (ie, dApp) to earn yield on their principle using various methods. These methods are classified into four main types which include: staking, lending, borrowing, and utilizing liquidity providers, which is largely done on a decentralized exchange (DEX). 
+
+Syscoin plans to incentivize Masternode operators where they can put yields to work by investing them into a DeFi liquidity provider which will be automated in a trustless manner through DAOSYS. Hence, extending the Syscoin ecosystem, and increasing daily volumes. This system of trustlessly investing Masternode yields into a DeFi liquidity provider is what we call \textit{Masternode Yield Farming}, which will serve as the first intended usecase for DAOSYS and will be the first of its kind in the crypto space.
+
+Currently, there are approximately 2,500 Masternodes running on the Syscoin network. In \cite{Moo22}, we ran a case study with a 5-year projection analysis on an additional 400 Masternodes, while at the same time factoring in network growth. We applied all these components into our model to estimate daily supply growth of the network, along with its respective confidence intervals; see Appendix \ref{sec:masternode_tokenomics} for details. With this tokenomics model, we estimated the expected share a typical node contributes to the network on a daily basis. Finally, with expected share, we estimated the 5-year output of 400 new Masternodes; see Table \ref{table:mn_returns} for details.
+
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/supply_tot_reward_output.png}
+\caption{SYS (MN+ DAOSYS)  = 14,732,279 / 40,000,000 = 36.8\% return} 
+\label{fig:reward_output}
+\end{figure} 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |c|c|c|c|c|c| } 
+\hline
+ \textbf{Date} & \textbf{USD} & \textbf{USD (lwr)} & \textbf{USD (upr)} & \textbf{nodes} \\
+\hline
+Dec 2023 & \$78,091 & \$51,283 & \$165,790 & 400 / 3,044\\
+Dec 2024 & \$250,676 & \$75,868 & \$464,996  & 400 / 3,123 \\
+Dec 2025 & \$931,645 & \$214,990 & \$1,540,776 & 400 / 3,198 \\
+Dec 2026 & \$2,408,252 & \$534,067 & \$3,324,955 & 400 / 3,270 \\
+Dec 2027 & \$5,246,669 & \$733,818 & \$7,265,095 & 400 / 3,338 \\
+\hline
+\end{tabular}
+\caption{Projected monthly rewards from 400 investment nodes in USD using projected total (ie, Masternode + DAO SYS) rewards and Monte Carlo price simulations; see Appendix B}
+\label{table:mn_returns}
+\end{table}
+
+The Syscoin Foundation will allocate \$20M SYS into SYS Labs. At approx. \$27M USD peak valuation, SYS Labs will execute the master node yield strategy using the rewards (see Table 6). This will enable liquidity events which investors of SYS Labs can execute on through token warrants in exchange for equity. Masternode ROI will be used to deposit into DAOSYS which will be used to fund ecosystem initiatives as well as pay out token warrants to SYS Labs investors looking to exit. Analysis on Masternode ROI based on price modelling through to year 2028; see here. Analysis on DAOSYS ROI based on price modelling through to year 2025 (not including value created through lending to builders to build ecosystem objectives); see \cite{DAOSim22}.
+
+The same yield strategy (executed through DAOSYS) will also be executed to any of our own tokens we create through DeFi cloning protocols or tokens we create through our innovations (e.g., rollup gas tokens, wallet token, Luxy, ZKCross, etc.) where applicable. Token warrants would be issued and executed on via DAOSYS using an exit mechanism similar to the Masternode Yield Strategy. Also, the act of using DAOSYS to create an exit vehicle helps the remaining investors in the strategy by creating liquidity events that promote the growth of the DAO itself as well as the ecosystem. This is a form of vesting that matures over time. Thus giving unlimited upside potential at the expense of time value while maximizing positive effect of liquidity events instead of being parasitic to the rest of the investors.
+
+\subsubsection{Index Tokens (Crypto ETFs)}
+
+While the concept of indexing in the equity market is well established, it is surprising to see that this principle has yet to be largely applied to the crypto market using smart contracts. Hence, since DAOSYS itself is a non-speculated asset backed index of cryptos, for the first time we introduce a new class of cryptos called index tokens or crypto ETFs. The intelligence of the DAOSYS protocol will allow for the seamless, secure deployment of these index tokens using one of its readily available templates addressing this important usecase.
+
+To put into perspective, under John Boogle’s direction, Vanguard is credited with the creation of the first index fund which was made available to the individual investor \cite{Bog17}. This index fund was created in 1957, and was passively tied to the performance of the S\& P 500. Boogle is known as the founder of The Vanguard Group, which as of today (ie, Sept 2022), manages \$7 trillion in assets. When investing long-term, Boogle argues the most efficient way to invest, is to simply buy the market itself, and that over time when looking at funds as a whole, they as a collective always revert to the mean. He also argues that over time, actively managed funds underperform the market, no matter what the current performance is.
+
+Given the high volatility in the crypto market, and the fact that projects are continually entering and exiting the top 100 or even top 10 projects at a much higher frequency, we propose to simplify this problem and limit our attention to the top two crypos being BTC and ETH, with the introduction of what we term Bithereum. In Fig. \ref{fig:crypto_index} we see the advantage of developing an index token using this simple and effective strategy as we compare Bitcoin performance against the performance of various weighting strategies with Ethereum. Also, from a point of reasoning, it makes good sense to create an index token with BTC and ETH for the following reasons:
+
+\begin{itemize}
+  \item ETH and BTC have been the top two projects by market cap for the past 5 years
+  \item ETH is a good proxy for the altcoin market which perform better in bull markets, while BTC is a good proxy for crypto gold which perform better in bear markets
+  \item By referencing Fig. 2, we can see the combined market cap share of the crypto space of both of these two projects has fluctuated between 60-90\%
+  \item Market cap share between ETH and BTC is negatively correlated against each other (p-val $\sim$ 0)
+  \item ETH encapsulates large portions of other sectors (DeFi, NFT, etc) of the crypto space
+\end{itemize}  
+
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/index_coin.png}
+\caption{Comparison of various Bithereum index coin market weighting strategies beginning at the 2020 BTC halvening with \$1 initial investment. We see that compared to just BTC alone, that a 50/50 weighting of BTC and ETH would outperform BTC by $\sim$ 16 times.} 
+\label{fig:crypto_index}
+\end{figure} 
+
+It is surprising that with all the developments that have happened in crypto, and given the success that ETFs have had in traditional finance we have not yet seen adoption of this idea into crypto yet. However, DAOSYS with its smart DOA features will allow for the secure and seamless deployment of these new class of cryptos.  
+
+\subsection{Launch Expectations}
+
 \lipsum[1]
 
-\subsection{First Use Case: Masternode Yield Farming}
-
-\lipsum[1]
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/daosys_launch.png}
+\caption{DAOSYS launch expectation} 
+\label{fig:daosys_launch}
+\end{figure} 
 
 \section{Summary}
 \label{section:summary}
@@ -158,6 +251,10 @@ There are several limitations to proxy contracts which include: (a) implementing
 \label{fig:diamonds}
 \end{figure} 
 
+\section{Masternode Tokenomics Model}
+\label{sec:masternode_tokenomics}
+xx
+
 \begin{thebibliography}{00}
 
 \bibitem{San83} S.J. Grossman, O.D. Hart, \textit{An Analysis of the Principal-Agent Problem}, Econometrica, Volume 51, Issue 1 (Jan., 1983), 7-46.
@@ -172,9 +269,13 @@ There are several limitations to proxy contracts which include: (a) implementing
 
 \bibitem{But18} V. Buterin, \textit{EIP-1014: Skinny CREATE2}, Apr. 2018. Accessed on: Sept 2022.  [Online]. Available: https://eips.ethereum.org/EIPS/eip-1014
 
+\bibitem{San83} S.J. Grossman, O.D. Hart, \textit{An Analysis of the Principal-Agent Problem}, Econometrica, Volume 51, Issue 1 (Jan., 1983), 7-46.
 
+\bibitem{Moo22} I.C. Moore,  \textit{Masternode Yield Farming as a DAOSYS Usecase: Part 1}, Medium Article, Aug. 2022. Accessed on: Sept 2022.  [Online]. https://medium.com/$@imoore\_4314/masternode-yield-farming-as-a-daosys-usecase-part-1-8485ab7ba721$
 
-\bibitem{Sig21} J. Sidhu and I.C. Moore, \textit{Syscoin 4.0: A Peer-to-Peer Electronic Cash System Built For Business Applications}, Dec 2021, Accessed on: Sep 2022.  [Online]. Available:  https://syscoin.org/file/syscoin4-whitepaper.pdf
+\bibitem{DAOSim22} I.C. Moore, \textit{Simulation: Masternode Yield Farming}, Syscoin Github repos, Accessed on: Apr 2021.  [Online]. Available: https://github.com/syscoin/daosys/tree/main/notebooks/simulation
+
+\bibitem{Bog17} J.C. Bogle, \textit{The Little Book of Common Sense Investing, 10th Edition}, John Wiley \& Sons, New Jersey, 2017
 
 \end{thebibliography}
 

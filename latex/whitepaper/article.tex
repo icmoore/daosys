@@ -139,6 +139,23 @@ All Services are required to implement ERC-165 including the Service extension t
 \label{fig:hyper_facet}
 \end{figure} 
 
+\section{Security}
+\label{sec:security}
+
+When a DAO joins the DAOSYS ecosystem it will be either verified or unverified, which is a security attribute that will dictate the way it conducts itself on the network. This verification is done automatically and trustlessly based on the configurations it adopts upon launch. Within that classification, it will be further subclassed as either private or public. Hence, the four types of security are: public verified, private verified, public unverified, and private unverified.
+
+\subsection{Verified DAOs}
+\label{sec:verified}
+
+The main purpose of verified DAOs is to ensure that contributing DAOs are safe to transact with from a security standpoint as DAOSYS will know what contracts will be doing with storage and will be participating in the tokenomics model described in Section \ref{sec:tokenomics}. The public verified usecase will be the most common type of DAO on the network and are essentially clones of DAOSYS. With this comes the ability to create is own sub-network of child DAOs where it will receive the benefit of cascading royalties as illustrated in Fig. \ref{fig:clone_model}. The freedoms on launching a public verified DAO would akin to the GNU public licence in the sense that there would be certain freedoms that users would be permitted and not permitted to do with the source code.
+
+A private verified DAO would be the second most adopted usecase on the network and with freedoms akin to a Redhat or AWS EC2 licence agreement where participation in the DAO is free, but services and support are not. A likely scenario of this would be corporations looking to set up private smart wallets to consume the DAOSYS features.
+
+\subsection{Unverified DAOs}
+\label{sec:unverified}
+
+When a newly launched DAO contains facets augmented to configurations that do not adhere to the DAOSYS standards, then it is classified as unverified. For users that are not proficient in Solidity development and security then there is an increased risk that users of unverified DAOs could loose their funds. However, that does not mean that there are not good usecases for these types of DAOs. For instance, a public unverified DAO may be used as a public testnet to vet new ideas that are uncommon to the network. Whereas a private unverified DAO may be useful to those looking setup smart wallets with modules consisting of a host of sophisticated asset managing DeFi strategies. These modules will allow users to configure their own DeFi strategies and would be akin to players in traditional finance setting up their own LLCs to manage funds.
+
 \section{Tokenomics}
 \label{sec:tokenomics}
 
@@ -146,8 +163,8 @@ The tokenomics model representing the minimum commitment of verified child DOAs 
 
 Included in this symbiotic relationship are several other benefits that child DOAs will have by joining this network over building its own standalone DAO. New DAOs benefit from significantly fast development time by selecting any one of the pre-vetted, secure DAOSYS templates. Included in this, DAOs can simulate the tokenomic behavior prior to launch using our Python simulator tailored to our system (as detailed in next Section) to build predictive models to determine 2-5 year estimated ROI calculations. DAOs that are part of our network will also benefit from the seamless integrations of working with other DAOs within our network. These integrations would be akin to the benefits nation states have when they join international trade agreements, where DAOSYS behaves as the overseeing regulatory body, and the child DAOs share attributes as participating nation states. These child DAOs also have the flexibility of cloning the DAOSYS factory and spawning its own sub-network within the DAOSYS ecosystem; see Fig. \ref{fig:clone_model}.  
 
-
 \subsection{Tokenomics Model}
+\label{sec:tokenomics_model}
 
 The five steps of the tokenomics model described as a thought simulation Fig. \ref{fig:tokenomics_model} is as follows. In step A we assume the DAOSYS vault contains no assets, while the child DAO has 1000 SYS and 200 DAI. In step B we have a triggering event that stimulates a small deposit of 1 SYS and 0.2 DAI from the Child DAO vaults into the DAOSYS vaults. When this happens the DAOSYS vault will mint debt tokens of these newly aquired assets with a 1:1 backing. In exchange for these assets, the child DAO will receive newly minted index tokens that represent a 1:1 backing by DAOSYS. Next in step C, DAOSYS will send both these debt and collateral tokens through a DeFi investment engine. Over time, the DAOSYS vault will collect interest from these newly acquired collateral and debt assets, as seen in step D. The child child can either keep these collateral in DAOSYS to continue to collect interest or recall the collateral. Hence, in the final stage E of this process, the child DAO recalls the original collateral and all its earned interest, while DAOSYS keeps the debt interest. Once the child DAOs collateral and interest is withdrawn, both dept and index tokens are burned. When comparing the final step to the initial step, we see that both DAOSYS and the child DAO see a net positive gain in liquidity. The child DAO will collect interest from its own collateral, while DAOSYS will collect interest from the debt created from that collateral. 
 
@@ -157,10 +174,15 @@ The five steps of the tokenomics model described as a thought simulation Fig. \r
 \label{fig:tokenomics_model}
 \end{figure} 
 
+\subsection{Clone Model}
+\label{sec:clone_model}
+
+When considering the outline of Section \ref{sec:tokenomics_model}, we can see emergent behaviour that will arise for DAOs that are also clones of DAOSYS as illustrated in Fig. \ref{fig:clone_model}. When considering the tokenomics model in Section 
+\ref{sec:tokenomics_model}, there will arise a bidirectional cascade effect where DAOSYS will receive the cascaded interest accumulated on debt, and the the child DAOs will receive the cascaded interest accumulated on collateral.
 
 \begin{figure}[h!]
 \includegraphics[width=3in]{img/clone_model.png}
-\caption{Clone model that emerges from the tokenomics model of Fig. \ref{fig:tokenomics_model} as a byproduct from child DAOs creating their own children; collateral interest generated by DAOSYS cascades up through inheritance structure to all respective verified child DAOs, while debt interest cascades down to DAOSYS} 
+\caption{Clone model that emerges from the tokenomics model of Fig. \ref{fig:tokenomics_model} which occurs as a byproduct from child DAOs creating their own children; collateral interest generated by DAOSYS cascades up through inheritance structure to all respective verified child DAOs, while debt interest cascades down to DAOSYS} 
 \label{fig:clone_model}
 \end{figure} 
 
@@ -273,8 +295,6 @@ There are several limitations to proxy contracts which include: (a) implementing
 
 \section{Masternode Tokenomics Model}
 \label{sec:masternode_tokenomics}
-
-
 
 \begin{thebibliography}{00}
 

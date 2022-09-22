@@ -9,6 +9,7 @@
 \usepackage{textcomp}
 \usepackage{multirow}
 \usepackage{lipsum}
+\usepackage{makecell}
 \usepackage[switch]{lineno}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -53,26 +54,26 @@ The objective of a decentralized autonomous organization (DAO) is to solve the p
 
 The first inception of the DAO concept happened in May 2016 out of the Ethereum community, which was known as Genesis DAO, and was built as a smart contract on the Ethereum blockchain. However, this resulted in the well known DAO Hack which resulted in the draining of \$60M USD worth of funds from its treasury \cite{Sie22}. Today, there are many DAOs in operation with Uniswap, Aave and Maker DAO being amongst the most popular. However, these DAOs still fundamentally violate the core value proposition of self sovereignty that crypto currency promises, where DAOs currently take ownership of capital managed in a treasury controlled by a few individuals. This is the problem that DAOSYS intends to address.
 
-DAOSYS vision is to operate like a pure automated market maker (AMM) and be implemented in a manner that does not require external controls. In 2018, Uniswap became the first decentralized platform to successfully utilize an AMM \cite{Uni19}. However, like Uniswap and many AMMs, control of the capital in their respective liquidity pools is still centralized. DAOSYS intends to address this core issue via its new Autonomous Service Engine (ASE) technology \cite{Sys22}, hence allowing DAOs to be more autonomous and fully decentralized. The DAOSYS token is a smart DAO protocol that fully backed by an index of assets supported by its child DAOs. This technology is it will allow users to test, implement and realize countless decentralized finance (DeFi) usecase designs deployed in a secure manner through the ASE without having to continually redeploy new builds.
+DAOSYS vision is to operate like a pure automated market maker (AMM) and be implemented in a manner that does not require external controls. In 2018, Uniswap became the first decentralized platform to successfully utilize an AMM \cite{Uni19}. However, like Uniswap and many AMMs, control of the capital in their respective liquidity pools is still centralized. DAOSYS intends to address this core issue via its new Autonomous Service Engine (ASE) technology \cite{Sys22}, hence allowing DAOs to be more autonomous and fully decentralized. The DAOSYS token is a smart DAO protocol that fully backed by an index of assets supported by its child DAOs. This technology will allow users to test, implement and realize countless decentralized finance (DeFi) usecase designs deployed in a secure manner through the ASE without having to continually redeploy new builds.
 
 \begin{figure}[h!]
 \includegraphics[width=3in]{img/smart_dao.png}
-\caption{DAOSYS as the smart DAO protocol, utilizing the hyper-diamond proxy; see EIP-2353 in Appendix A} 
+\caption{DAOSYS as the smart DAO protocol, utilizing the hyper-diamond proxy; see EIP-2535 in Appendix A} 
 \label{fig:daosys_governance}
 \end{figure}
 
-Here are the following features that DAOSYS will have:
+The features that DAOSYS will have are as follows:
 
 \begin{itemize}
-  \item SMART DAO protocol
+  \item Smart DAO protocol via hyper-diamond proxy
   \item Self-sovereign via trustless automatic integration
-  \item Seamless fast deployment
+  \item Seamless fast deployment using secure templates
   \item Hyper-diamond standard
   \item Collateralized VE (vesting) indexing token
   \item Automated audits of child DAOs
   \item Fully backed (eg, DAI, SYS)
   \item Non-spectualtive asset
-  \item Potential emergent behavior (eg, index tokens)
+  \item New emergent behavior and innovation for DeFi
 \end{itemize}  
 
 \section{Governance}
@@ -149,7 +150,7 @@ When a DAO joins the DAOSYS ecosystem it will be either verified or unverified, 
 
 The main purpose of verified DAOs is to ensure that contributing DAOs are safe to transact with from a security standpoint as DAOSYS will know what contracts will be doing with storage and will be participating in the tokenomics model described in Section \ref{sec:tokenomics}. The public verified usecase will be the most common type of DAO on the network and are essentially clones of DAOSYS. With this comes the ability to create is own sub-network of child DAOs where it will receive the benefit of cascading royalties as illustrated in Fig. \ref{fig:clone_model}. The freedoms on launching a public verified DAO would akin to the GNU public licence in the sense that there would be certain freedoms that users would be permitted and not permitted to do with the source code.
 
-A private verified DAO would be the second most adopted usecase on the network and with freedoms akin to a Redhat or AWS EC2 licence agreement where participation in the DAO is free, but services and support are not. A likely scenario of this would be corporations looking to set up private smart wallets to consume the DAOSYS features.
+A private verified DAO would be the second most adopted usecase on the network having freedoms akin to a Redhat or AWS EC2 licence agreement where participation in the DAO is free, but services and support are not. A likely scenario of this would be corporations looking to set up private smart wallets to consume the DAOSYS features.
 
 \subsection{Unverified DAOs}
 \label{sec:unverified}
@@ -186,34 +187,83 @@ When considering the outline of Section \ref{sec:tokenomics_model}, we can see e
 \label{fig:clone_model}
 \end{figure} 
 
-\subsection{Python Simulator}
+\subsection{DeFi Python Simulator}
 
-\lipsum[2-4]
+To realize proper tokenomics design, from an engineering perspective, it is highly inefficient to invest resources into development without first conducting a proper simulations of the design to test specifications for various outcomes. This is what every DeFi project in the crypto space is not doing. This is why we are introducing an open source python package to simulate various sandboxed components of DAOSYS so that project engineers, managers and designers can pre-plan outcomes prior to investing valuable resources into development.
+
+With this tool, DAOSYS designers can utilize the plug and play components of our simulator to build tokenomics mockups for business planning purposes so that teams can come together and get collective consensus alongside potential users and investors. Not only is this tool applicable to DAOSYS, it can be used as a general purpose tool to simulate DEX activity for anyone wishing to setup their own liquidity pool (LP) and wish to stress test their ideas prior to development. This can be used as a powerful design tool to explore the limitations of an DeFi project idea prior to committing valuable resources on development costs (ie, Devs and Project Managers). Table \ref{table:simulator_components} highlights the main components of the simulator, so that potential users of the system can get an idea of what to expect.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |l|l| } 
+\hline
+ \textbf{Simulator Component} & \textbf{Description} \\
+\hline
+Agents          & Entities that engage with the system, and are  \\
+                & subcategorized into tokens and users \\
+Events          & Agnostic events that take place within the \\ 
+				& system (eg, mint, deposit, withdraw, swap, \\
+				& and rebase) \\
+ModelQueue      & Queue of univariate events that are modelled \\
+				& aprior that can be fed into the system as \\
+				& events\\
+Actions         & Event actions that are fed into the system \\
+				& performed by agents; they can either be single \\
+				& stand-alone independent event actions or \\
+				& chained together with dependency \\
+ActionBatch     & Batches of actions chained together into a \\
+				& sequence which can be repeated; there is only \\
+				& one assigned time delta per batch, and there is \\
+				& no limit as to the number of batches that can be \\
+				& created \\
+Liquidity Pools & Pool of two token agents managed by constant \\ 
+				& product trading \\
+Orchestrator    & Manages agents and actions working within the \\ 
+				& system \\
+Event Queue     & Queue of storable actions \\
+Event Executor  & Final step which executes queue of action \\
+				& events \\
+\hline
+\end{tabular}
+\caption{Descriptions of DeFi python simulator components; refer to Fig. \ref{fig:simulator} to see how components interact with one another.}
+\label{table:simulator_components}
+\end{table}
+
+We have a working beta version of the simulator which is available through Syscoin’s Github repository. This simulator is being built alongside DAOSYS, and we are using this to understand the ROI and design considerations for DAOSYS’s first usecase (ie, Masternode Yield Farming). Since the simulator is still in the beta stage, the setup is currently not realized to its full intention. However, a downloadable demo of this tool is ready for others in the community to begin using. For a mini python tutorial on how to use this tool, please refer to \cite{Moo22B} and refer to \cite{DAOSim22} for a series of example Jupyter notebooks.
+
+The purpose of this tool is primarily for the design aspect of DAOSYS, and is still in its early stages of development. The next stages involve feeding the output of various mathematical models into the simulator framework and to use this tool to simulate other DeFi usecases. This is so that we can test a roster of edge cases to build more robust systems. The final goal is to bring this system to a level of maturity so that it can be utilized in parallel with the contracts in real time. Hence, opening up DeFi to a more scientific way of design, test, and implementation.
+
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/simulator.png}
+\caption{System components to DeFi Python simulator for DAOSYS} 
+\label{fig:simulator}
+\end{figure} 
 
 \section{RoadMap}
 \label{sec:roadmap}
 
-\subsection{SYSLabs}
+\subsection{SYS Labs}
 
-\lipsum[1]
+SYS Labs is the R\&D development arm of the Syscoin Platform which is to be self-perpetually funded through DAOSYS, hence being its own bank. It will do this by lending its earned funds to build the ecosystem, and increasing inherent value in a virtuous cycle of utility. We understand that specific business models may become irrelevant over time as companies organically typically grow and die over time based on the inability to adapt its business practices and revenue models to the existing market trends, however the DAO model we have created is agnostic of revenue models and is completely driven by decentralized principles and tokenomics which are flexible to build value in the best way possible, maximizing the value of entire ecosystem with the minimal social and financial overhead costs. All of our products will be based on user acquisition, open source and extracting maximal value into the appreciation of the ecosystem.
 
-\subsection{L2: NEVM}
+\subsection{Network Enhanced Virtual Machine}
 
-In Dec 2021, Syscoin released the first stage of its Network Enhanced Virtual Machine (NEVM) which utilizes the Ethereum Virtual Machine (EVM). In the coming months (from the time of this publication), this will include a Zero Knowledge Proof (ZKP) system to build layer 2 (L2) scalable applications, and one of the first of these applications will be DAOSYS.
+In Dec 2021, Syscoin released the first stage of its Network Enhanced Virtual Machine (NEVM) which utilizes the Ethereum Virtual Machine (EVM). In the coming months (from the time of this publication), this will include a Zero Knowledge Proof (ZKP) system to build layer 2 (L2) scalable applications \cite{Sig21a,Sig21b}, and one of the first of these applications will be DAOSYS.
 
 \subsection{Usecases}
 
 \subsubsection{Masternode Yield Farming}
+\label{sec:yield_farming}
 
 Yield farming is a technique that uses DeFi to maximize returns where investors submit liquidity to a decentralized application (ie, dApp) to earn yield on their principle using various methods. These methods are classified into four main types which include: staking, lending, borrowing, and utilizing liquidity providers, which is largely done on a decentralized exchange (DEX). 
 
 Syscoin plans to incentivize Masternode operators where they can put yields to work by investing them into a DeFi liquidity provider which will be automated in a trustless manner through DAOSYS. Hence, extending the Syscoin ecosystem, and increasing daily volumes. This system of trustlessly investing Masternode yields into a DeFi liquidity provider is what we call \textit{Masternode Yield Farming}, which will serve as the first intended usecase for DAOSYS and will be the first of its kind in the crypto space.
 
-Currently, there are approximately 2,500 Masternodes running on the Syscoin network. In \cite{Moo22}, we ran a case study with a 5-year projection analysis on an additional 400 Masternodes, while at the same time factoring in network growth. We applied all these components into our model to estimate daily supply growth of the network, along with its respective confidence intervals; see Appendix \ref{sec:masternode_tokenomics} for details. With this tokenomics model, we estimated the expected share a typical node contributes to the network on a daily basis. Finally, with expected share, we estimated the 5-year output of 400 new Masternodes; see Table \ref{table:mn_returns} for details.
+Currently, there are approximately 2,500 Masternodes running on the Syscoin network. In \cite{Moo22A}, we ran a case study with a 5-year projection analysis on an additional 400 Masternodes, while at the same time factoring in network growth. We applied all these components into our model to estimate daily supply growth of the network, along with its respective confidence intervals; see Appendix \ref{sec:masternode_tokenomics} for details. With this tokenomics model, we estimated the expected share a typical node contributes to the network on a daily basis. Finally, with expected share, we estimated the 5-year output of 400 new Masternodes; see Table \ref{table:mn_returns} for details.
 
 \begin{figure}[h!]
 \includegraphics[width=3in]{img/supply_tot_reward_output.png}
-\caption{SYS (MN+ DAOSYS)  = 14,732,279 / 40,000,000 = 36.8\% return} 
+\caption{Predicted five-year returns from 400 new Syscoin masternodes starting Jan 2023, which include both net positive yields from both Masternode and DAOSYS; (TOP) daily returns; and (BOTTOM) cumulative returns. Overall, we are predicting an overall return of 14.7M SYS which represents a 5-year return of 36.8\% from the original investment of 40M SYS. Without DAOSYS, we would only realize an overall return of 31.2\%; for methodology see Appendix B.} 
 \label{fig:reward_output}
 \end{figure} 
 
@@ -256,7 +306,7 @@ Given the high volatility in the crypto market, and the fact that projects are c
 
 \begin{figure}[h!]
 \includegraphics[width=3in]{img/index_coin.png}
-\caption{Comparison of various Bithereum index coin market weighting strategies beginning at the 2020 BTC halvening with \$1 initial investment. We see that compared to just BTC alone, that a 50/50 weighting of BTC and ETH would outperform BTC by $\sim$ 16 times.} 
+\caption{Comparison of various Bithereum index coin market weighting strategies beginning at the 2020 BTC halvening with \$1 initial investment. We see that compared to just BTC alone, that a 50/50 weighting of BTC and ETH would outperform BTC by approximately 16 times.} 
 \label{fig:crypto_index}
 \end{figure} 
 
@@ -264,17 +314,20 @@ It is surprising that with all the developments that have happened in crypto, an
 
 \subsection{Launch Expectations}
 
-\lipsum[1]
+Prior to launch, we are waiting for Syscoin's L2 (ie, Rollux) \cite{ROL22, Sig21a, Sig21b} with Syscoin's Proof-of-Data Availability (PoDA) \cite{PODA22} to go into production. While it is technically possible that DAOSYS can run from any layer 1 (L1) EVM blockchain, it is our intention that it be launched when Rollux goes live. Currently, DAOSYS is running on the Rollux testnet where it is running a test implementation for Pegasys, which is Syscoin's premiere decentralized exchange (DEX). 
+
+We are expecting to launch DAOSYS in the in the early part of 2023 with crypto's first Masternode Yield Farm as its first functioning child DAO; see Fig. \ref{fig:daosys_launch}. Hence other projects running Masternodes will be incentivised to use our template and join the ecosystem to earn additional yield following the business case outlined in Section \ref{sec:yield_farming}.
 
 \begin{figure}[h!]
 \includegraphics[width=3in]{img/daosys_launch.png}
-\caption{DAOSYS launch expectation} 
+\caption{DAOSYS expected ecosystem at launch} 
 \label{fig:daosys_launch}
 \end{figure} 
 
 \section{Summary}
 \label{section:summary}
-\lipsum[1]
+
+In this discussion we present the first ever smart DAO protocol; this idea is similar to Ethereum in the sense that both protocols work with decentralized immutable storage. However, instead launching contracts from chains, we work with Diamonds by exploiting the multi-facet proxy that was first presented in EIP-2535 \cite{Mud20}.
 
 \appendices
 
@@ -312,11 +365,24 @@ There are several limitations to proxy contracts which include: (a) implementing
 
 \bibitem{San83} S.J. Grossman, O.D. Hart, \textit{An Analysis of the Principal-Agent Problem}, Econometrica, Volume 51, Issue 1 (Jan., 1983), 7-46.
 
-\bibitem{Moo22} I.C. Moore,  \textit{Masternode Yield Farming as a DAOSYS Usecase: Part 1}, Medium Article, Aug. 2022. Accessed on: Sept 2022.  [Online]. https://medium.com/$@imoore\_4314/masternode-yield-farming-as-a-daosys-usecase-part-1-8485ab7ba721$
+\bibitem{Moo22A} I.C. Moore,  \textit{Masternode Yield Farming as a DAOSYS Usecase: Part 1}, Medium Article, Aug. 2022. Accessed on: Sept 2022.  [Online]. https://icmoore.medium.com/masternode-yield-farming-as-a-daosys-usecase-part-1-8485ab7ba721
+
+\bibitem{Moo22B} I.C. Moore,  \textit{Masternode Yield Farming as a DAOSYS Usecase: Part 2}, Medium Article, Aug. 2022. Accessed on: Sept 2022.  [Online]. https://icmoore.medium.com/masternode-yield-farming-as-a-daosys-usecase-part-2-8906d0a11c27
 
 \bibitem{DAOSim22} I.C. Moore, \textit{Simulation: Masternode Yield Farming}, Syscoin Github repos, Accessed on: Apr 2021.  [Online]. Available: https://github.com/syscoin/daosys/tree/main/notebooks/simulation
 
 \bibitem{Bog17} J.C. Bogle, \textit{The Little Book of Common Sense Investing, 10th Edition}, John Wiley \& Sons, New Jersey, 2017
+
+\bibitem{PODA22} Syscoin News, \textit{Syscoin PoDA is live on the Tanenbaum network!}, Syscoin, Aug. 2022. Accessed on: Sept 2022.  [Online]. Available: https://syscoin.org/news/syscoin-poda-is-live-on-the-tanenbaum-network
+
+\bibitem{ROL22} Syscoin News, \textit{Introducing Rollux, Syscoin's Rollup Suite Ready to Take Market by Storm}, Syscoin, Jun. 2022. Accessed on: Sept 2022.  [Online]. Available: https://syscoin.org/news/introducing-rollux-syscoins-rollup-suite-ready-to-take-market-by-storm
+
+\bibitem{Sig21a} J. Sidhu, \textit{A Design For An Efficient Coordinated Financial Computing Platform}, Feb 2021, Accessed on: Sep 2021.  [Online]. Available:  https://jsidhu.medium.com/a-design-for-an-efficient-coordinated-financial-computing-platform-ab27e8a825a0
+
+\bibitem{Sig21b} J. Sidhu and I.C. Moore, \textit{Syscoin 4: A Peer-to-Peer Electronic Cash System Built For Decentralized
+Web 3.0 Business Applications}, Syscoin Platform, Dec. 2021. Accessed on: Sept 2022. [Online]. Available: https://syscoin.org/$syscoin4\_whitepaper.pdf$
+
+
 
 \end{thebibliography}
 

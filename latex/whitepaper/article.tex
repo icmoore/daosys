@@ -350,6 +350,61 @@ There are several limitations to proxy contracts which include: (a) implementing
 \section{Masternode Tokenomics Model}
 \label{sec:masternode_tokenomics}
 
+The Masternode Yield Farming tokenomics model has two main components: (a) Masternode rewards; and (b) DAOSYS rewards. From the a high-level perspective, users will commit the predetermined amount of liquidity to purchase a Masternode, the funds used for this purchase are staked thus used to generate $Coins_{New}$ in accordance to the specifications described in \cite{Sig21b}, which is as follows:
+
+\begin{itemize}
+\item \textbf{Block time:} 150 seconds
+\item \textbf{Halving interval:} 210240 (1 year)
+\item \textbf{Base Rewards:}  96.25 SYS per block deflated 5 percent every 210240 blocks
+\item \textbf{NEVM Rewards:}  10.55 SYS per block (not deflated). EIP1559 model
+\item \textbf{Governance Proposals:}  10 percent of Base Rewards paid out every 17520 blocks (1 month)
+\item \textbf{Miner/Masternode Subsidy:}  90 percent of Base Rewards. 25 percent of this value goes to miner, 75 percent of this value goes to masternode
+\item \textbf{Masternode Minimum Subsidy:} 5.275 SYS (can not go below this amount even accounting for deflation)
+\item \textbf{Masternode collateral requirement:} 100,000 SYS
+\item \textbf{Masternode seniority}: 35 percent increase after 210240 blocks (1 year), 100 percent increase after 525600 blocks (2.5 years)
+\end{itemize}
+Using the rule set described in the above specifications, we determine the Masternode rewards using the following relationship: 
+\begin{equation*}
+MN_{Rewards} = (Blocks_{Num}) (Coins_{New}) \left(\frac{Nodes_{Num}}{Supply_{New}}\right)
+\end{equation*}
+where current supply is calculated via the following:
+\begin{equation*}
+Supply_{New} = Supply + Coins_{New} - Transaction Fee 
+\end{equation*}
+and where transaction fees were calculated in accordance to Section \ref{appendix:tx_fee_burn}. Using Masternode returns, we calculated the USD value using Monte Carlo price projections as per Section \ref{appendix:monte_carlo}. Final total returns were determined via the following: 
+\begin{equation*}
+Total_{Rewards} = MN_{Rewards} + DAOSYS_{Rewards} 
+\end{equation*}
+
+\subsection{Transaction Fee Burn}
+\label{appendix:tx_fee_burn}
+
+To model transaction fee burn to determine the supply end we used Ethereum fee data to serve as a proxy. We have determined that transaction fees follow an exponential growth that can be modelled via the following log-log model:
+\begin{equation}
+ln(\hat{y_{t}}) = a + bln(x_{t})
+\end{equation}
+where parameters $a$ and $b$ and its confidence intervals can be estimated using Ordinary Least Squares (OLS).
+
+\subsection{Point Price Predictions: Monte Carlo}
+\label{appendix:monte_carlo}
+To generate point predictions for the price of Syscoin, we made some assumptions. This is where price was given the freedom to fluctuate between \$0.25 to \$25 USD / SYS over the 5-year projection interval (ie, 2023-2028) while maintaining an overall upward logarithmic growth (like most successful crypto projects typically do). To do this we generated a set up Monte Carlo point predictions using the following:
+
+\begin{equation}
+\label{eqn:trend}
+	\mathbf{y}_{t} = c + \mathbf{\tilde{z}}_{t}e^{k z_{t}}
+\end{equation}
+where the random drift term $\mathbf{\tilde{z}}_{t}$ normalized between the interval [$a_{lwr}$,$a_{upr}$] given by:
+\begin{equation}
+\label{eqn:min_max}
+	\mathbf{\tilde{z}}_{t}= \frac{\mathbf{z}_{t} - min(\mathbf{z}_{t})}{max(\mathbf{z}_{t}) - min(\mathbf{z}_{t})}
+\end{equation}
+and $\mathbf{z}_{t}$ is an ARIMA(1,1,1) process, given by:
+\begin{equation}
+\label{eqn:drift}
+	\mathbf{z}_{t} = \gamma + \mathbf{z}_{t-1} + \phi_{1} \mathbf{z}_{t-1} - \phi_{1} \mathbf{z}_{t-2} +  \theta_{1} \mathbf{e}_{r-1} + \mathbf{e}_{t}
+\end{equation}
+where $\phi_{1}$ is the AR(1) coefficient, $\theta_{1}$ is the MA(1) coeffcient, and $\mathbf{e}_{t} \sim N(0, \sigma^2)$. Once these sets were generated, we estimated the 5$^{th}$ and 95$^{th}$ percentiles to attain the 90\% prediction interval. To see a table of these predictions, along with the lower and upper bounds, please refer to \cite{Moo22A}. 
+
 \begin{thebibliography}{00}
 
 \bibitem{San83} S.J. Grossman, O.D. Hart, \textit{An Analysis of the Principal-Agent Problem}, Econometrica, Volume 51, Issue 1 (Jan., 1983), 7-46.
@@ -363,8 +418,6 @@ There are several limitations to proxy contracts which include: (a) implementing
 \bibitem{Mud20} N. Mudge, \textit{EIP-2535: Diamonds, Multi-Facet Proxy}, Aug. 2020. Accessed on: Sept 2022.  [Online]. Available: https://eips.ethereum.org/EIPS/eip-2535
 
 \bibitem{But18} V. Buterin, \textit{EIP-1014: Skinny CREATE2}, Apr. 2018. Accessed on: Sept 2022.  [Online]. Available: https://eips.ethereum.org/EIPS/eip-1014
-
-\bibitem{San83} S.J. Grossman, O.D. Hart, \textit{An Analysis of the Principal-Agent Problem}, Econometrica, Volume 51, Issue 1 (Jan., 1983), 7-46.
 
 \bibitem{Moo22A} I.C. Moore,  \textit{Masternode Yield Farming as a DAOSYS Usecase: Part 1}, Medium Article, Aug. 2022. Accessed on: Sept 2022.  [Online]. https://icmoore.medium.com/masternode-yield-farming-as-a-daosys-usecase-part-1-8485ab7ba721
 

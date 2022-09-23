@@ -369,9 +369,9 @@ MN_{Rewards} = (Blocks_{Num}) (Coins_{New}) \left(\frac{Nodes_{Num}}{Supply_{New
 \end{equation*}
 where current supply is calculated via the following:
 \begin{equation*}
-Supply_{New} = Supply + Coins_{New} - Transaction Fee 
+Supply_{New} = Supply_{Prev} + Coins_{New} - Fee_{TX} 
 \end{equation*}
-and where transaction fees were calculated in accordance to Section \ref{appendix:tx_fee_burn}. Using Masternode returns, we calculated the USD value using Monte Carlo price projections as per Section \ref{appendix:monte_carlo}. Final total returns were determined via the following: 
+and $Fee_{TX}$ is calculated in accordance to Section \ref{appendix:tx_fee_burn}. Using Masternode returns, we calculated the USD value using Monte Carlo price projections as per Section \ref{appendix:monte_carlo}. Final total returns were determined via the following: 
 \begin{equation*}
 Total_{Rewards} = MN_{Rewards} + DAOSYS_{Rewards} 
 \end{equation*}

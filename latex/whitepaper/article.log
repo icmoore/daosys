@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.3)  26 SEP 2022 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.3)  28 SEP 2022 07:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1001,10 +1001,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7449 strings out of 478994
- 118654 string characters out of 5858185
+ 7422 strings out of 478994
+ 118474 string characters out of 5858185
  587708 words of memory out of 5000000
- 24757 multiletter control sequences out of 15000+600000
+ 24730 multiletter control sequences out of 15000+600000
  496719 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,12n,117p,1492b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1027,7 +1027,7 @@ lvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/
 uhvro8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pf
 b></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
 cal/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on article.pdf (9 pages, 661556 bytes).
+Output written on article.pdf (9 pages, 661564 bytes).
 PDF statistics:
  139 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream

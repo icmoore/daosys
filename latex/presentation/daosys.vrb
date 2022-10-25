@@ -1,0 +1,12 @@
+\frametitle{Introduction: blah blah}
+Text Text Text Text. \\You can change the size of the footnote text like  Text\footnote{\small{ here.}} Text\footnote{\large{And here.}} Text\footnote{\tiny{And here.}}
+\begin{itemize} %The symbol of the items can be changed by which ever you want, this is just an example.
+    \item[$\diamond$] Text,
+    \item[$\diamond$] Text,
+    \item[$\diamond$] Text.
+\end{itemize}
+An equation without number could be represented by:
+\begin{equation*}
+    c^{2} = a^{2} + b^{2}
+\end{equation*}
+That's all for this slide.

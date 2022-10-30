@@ -1,8 +1,0 @@
-\frametitle{Introduction: smart DAO protocol}
-\setbeamercolor{background canvas}{bg=violet}
-\begin{figure}[h!]
-\includegraphics[width=3in]{img/smart_dao.png}
-\caption{DAOSYS as the smart DAO protocol, utilizing the hyper-diamond proxy; see EIP-2535}
-\label{fig:daosys_governance}
-\end{figure}
-

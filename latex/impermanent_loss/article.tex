@@ -1,0 +1,147 @@
+\documentclass[journal,twocolumn,12pt]{ieeesyscoin}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{makecell}
+\usepackage[switch]{lineno}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\history{}
+
+\title{\centering An Analytical and Empirical Survey of Impermanent Loss}
+\author{\centering \uppercase{Ian C. Moore, PhD}\authorrefmark{1},and
+\uppercase{Jagdeep Sidhu, MSc}\authorrefmark{2}}
+
+\address[1]{\centering  Syscoin Researcher, Syscoin Platform (e-mail: imoore@syscoin.org)}
+\address[2]{\centering Syscoin Lead Developer, (e-mail: sidhujag@syscoin.org)}
+\tfootnote{}
+
+\markboth
+{Cyotee \headeretal: DAOSYS: Smart DAO Protocol for Decentralized Finance}
+{Cyotee \headeretal: DAOSYS: Smart DAO Protocol for Decentralized Finance}
+
+\corresp{}
+
+\begin{abstract}
+\lipsum[1]
+\end{abstract}
+
+\begin{keywords}
+DAOSYS, Smart DAO, Decentralized Finance, Hyper-diamond proxy, EIP-2535
+\end{keywords}
+
+\titlepgskip=-15pt
+
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+
+\lipsum[1]
+
+
+\subsection{DeFi Python Simulator}
+\label{sec:python_simulator}
+
+To realize proper tokenomics design, it is highly inefficient to invest resources into development without first conducting a proper simulations of the design to test specifications for various outcomes. This is what every DeFi project in the crypto space is not doing. This is why we are introducing an open source python package to simulate various sandboxed DeFi components of DAOSYS so that project engineers, managers and designers can pre-plan outcomes prior to investing valuable resources into development.
+
+With this tool, DAOSYS designers can utilize the plug and play components of our simulator to build tokenomics mockups for business planning purposes so that teams can come together and get collective consensus alongside potential users and investors. Not only is this tool applicable to DAOSYS, it can be used as a general purpose tool to simulate DEX activity for anyone wishing to setup their own liquidity pool (LP) and wish to stress test their ideas prior to development. This can be used as a powerful design tool to explore the limitations of an DeFi project idea prior to committing valuable resources on development costs (ie, Devs and Project Managers). Table \ref{table:simulator_components} highlights the main components of the simulator, so that potential users of the system can get a higher level understanding of the DeFi simulator package.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |l|l| } 
+\hline
+ \textbf{Simulator Component} & \textbf{Description} \\
+\hline
+Agents          & Entities that engage with the system, and are  \\
+                & subcategorized into tokens and users \\
+Events          & Agnostic events that take place within the \\ 
+				& system (eg, mint, deposit, withdraw, swap, \\
+				& and rebase) \\
+ModelQueue      & Queue of univariate events that are modelled \\
+				& aprior that can be fed into the system as \\
+				& events\\
+Actions         & Event actions that are fed into the system \\
+				& performed by agents; they can either be single \\
+				& stand-alone independent event actions or \\
+				& chained together with dependency \\
+ActionChains    & Actions that have dependencies on other \\
+				& actions as inputs \\				
+ActionBatch     & Batches of actions placed together into a \\
+				& repeatable sequence; there is only one \\
+				& assigned time delta per the pass of each batch, \\
+				& and there is no limit as to the number of \\
+				& batches that can be created \\
+Liquidity Pools & Pool of two token agents managed by constant \\ 
+				& product trading \\
+Orchestrator    & Manages agents and actions working within the \\ 
+				& system \\
+Event Queue     & Queue of storable actions \\
+Event Executor  & Final step which executes queue of action \\
+				& events \\
+\hline
+\end{tabular}
+\caption{Descriptions of DeFi python simulator components; refer to Fig. \ref{fig:simulator} to see how components interact with one another.}
+\label{table:simulator_components}
+\end{table}
+
+We have a working beta version of the simulator which is available through Syscoin’s Github repository. This simulator is being built alongside DAOSYS, and we are using this to understand the ROI and design considerations for DAOSYS’s first usecase (ie, Masternode Yield Farming). Since the simulator is still in the beta stage, the setup is currently not realized to its full intention. However, a downloadable demo of this tool is available from Syscoin's Github repository for the community to begin using. For a mini python tutorial on how to use this tool, please refer to \cite{Moo22B} and refer to \cite{DAOSim22} for a series of example Jupyter notebooks.
+
+The purpose of this tool is primarily for the design aspect of DAOSYS, and is still in its early stages of development. The next stages involve feeding the output of various mathematical models into the simulator framework and to use this tool to simulate other DeFi usecases. This is so that we can test a roster of edge cases to build more robust systems. The final goal is to bring this system to a level of maturity so that it can be utilized in parallel with the contracts in real time. Hence, exposing DeFi to a scientific way of design, testing, and implementation.
+
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/simulator.png}
+\caption{System components to DeFi Python simulator for DAOSYS} 
+\label{fig:simulator}
+\end{figure} 
+
+
+
+\section{Summary}
+\label{section:summary}
+
+\lipsum[1]
+
+\appendices
+
+\section{EIP-2535 (Diamond Facets)}
+\label{sec:diamond}
+
+\lipsum[1]
+
+
+
+\begin{thebibliography}{00}
+
+\bibitem{Uni19} Uniswap Blog, \textit{A short history of Uniswap}, Sept. 2019. Accessed on: Sept 2022.  [Online]. Available:  https://uniswap.org/blog/uniswap-history
+
+\bibitem{Moo22A} I.C. Moore,  \textit{Masternode Yield Farming as a DAOSYS Usecase: Part 1}, Medium Article, Aug. 2022. Accessed on: Sept 2022.  [Online]. https://icmoore.medium.com/masternode-yield-farming-as-a-daosys-usecase-part-1-8485ab7ba721
+
+\bibitem{Moo22B} I.C. Moore,  \textit{Masternode Yield Farming as a DAOSYS Usecase: Part 2}, Medium Article, Aug. 2022. Accessed on: Sept 2022.  [Online]. https://icmoore.medium.com/masternode-yield-farming-as-a-daosys-usecase-part-2-8906d0a11c27
+
+\bibitem{DAOSim22} I.C. Moore, \textit{Simulation: Masternode Yield Farming}, Syscoin Github repos, Accessed on: Apr 2021.  [Online]. Available: https://github.com/syscoin/daosys/tree/main/notebooks/simulation
+
+\bibitem{ROL22} Syscoin News, \textit{Introducing Rollux, Syscoin's Rollup Suite Ready to Take Market by Storm}, Syscoin, Jun. 2022. Accessed on: Sept 2022.  [Online]. Available: https://syscoin.org/news/introducing-rollux-syscoins-rollup-suite-ready-to-take-market-by-storm
+
+\bibitem{Sig21a} J. Sidhu, \textit{A Design For An Efficient Coordinated Financial Computing Platform}, Feb 2021, Accessed on: Sep 2021.  [Online]. Available:  https://jsidhu.medium.com/a-design-for-an-efficient-coordinated-financial-computing-platform-ab27e8a825a0
+
+\bibitem{Sig21b} J. Sidhu and I.C. Moore, \textit{Syscoin 4: A Peer-to-Peer Electronic Cash System Built For Decentralized
+Web 3.0 Business Applications}, Syscoin Platform, Dec. 2021. Accessed on: Sept 2022. [Online]. Available: https://syscoin.org/$syscoin4\_whitepaper.pdf$
+
+
+
+\end{thebibliography}
+
+
+\EOD
+
+\end{document}

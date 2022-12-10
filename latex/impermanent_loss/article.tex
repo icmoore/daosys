@@ -50,10 +50,41 @@ DAOSYS, Smart DAO, Decentralized Finance, Hyper-diamond proxy, EIP-2535
 
 
 \section{Analytical Survey}
-\label{sec:analytical_survey}
+
+\subsection{Expected Impermanent Loss}
+\label{sec:exp_impermanent_loss}
 
 \lipsum[1]
 
+\begin{equation}\label{eqn:exp_imp_loss}
+  E\{IL\} = \frac{e^{-\frac{\sigma^2 t}{8}}}{\cosh (\frac{\mu t}{2})} - 1
+\end{equation}
+
+\subsection{Expected Portfolio Values}
+\label{sec:exp_portfolio_value}
+
+\lipsum[1]
+
+\begin{equation}\label{eqn:held_portfolio}
+  E\{V_{H}\} = 2 L \sqrt{P_{0}} (1 + e^{\mu t})
+\end{equation}
+
+\begin{equation}\label{eqn:portfolio_outside}
+  E\{V\} = 2 L \sqrt{P_{0}}  e^{(\frac{\mu t}{2} - \frac{\sigma^2 t}{8})}
+\end{equation}
+
+\subsection{Expected Returns with Compounding Fees}
+\label{sec:exp_lp_returns}
+
+\lipsum[1]
+
+\begin{equation}\label{eqn:portfolio_outside}
+  E\{V\} = 2 L \sqrt{P_{0}}  e^{(\frac{\mu t}{2} - \frac{\sigma^2 t}{8})}e^{f(t)}
+\end{equation}
+
+\begin{equation}\label{eqn:exp_returns}
+  E\{R\} = \frac{e^{-\frac{\sigma^2 t}{8} + f(t)}}{\cosh (\frac{\mu t}{2})}
+\end{equation}
 
 \section{DeFi Python Simulator}
 \label{sec:python_simulator}
@@ -123,8 +154,12 @@ The purpose of this tool is primarily for the design aspect of DAOSYS, and is st
 
 \appendices
 
-\section{Geometrics Brownian Motion}
+\section{Geometric Brownian Motion}
 \label{sec:gbm}
+
+\begin{equation}\label{eqn:gbm}
+  S_{t} = S_{0} e^{(\mu - \frac{\sigma^2}{2})t  + \sigma W_{t} }
+\end{equation}
 
 \lipsum[1]
 

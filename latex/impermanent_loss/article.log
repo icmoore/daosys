@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.3)  9 DEC 2022 12:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.3)  12 DEC 2022 14:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,18 +551,15 @@ Package xcolor Warning: Incompatible color definition on input line 52.
 Package xcolor Warning: Incompatible color definition on input line 54.
 
 
-Package xcolor Warning: Incompatible color definition on input line 63.
+Package xcolor Warning: Incompatible color definition on input line 84.
 
 
-Package xcolor Warning: Incompatible color definition on input line 76.
-
-
-Package xcolor Warning: Incompatible color definition on input line 80.
+Package xcolor Warning: Incompatible color definition on input line 88.
 
 <Logo.png, id=4, 401.5pt x 120.45pt>
 File: Logo.png Graphic file (type png)
 <use Logo.png>
-Package pdftex.def Info: Logo.png  used on input line 80.
+Package pdftex.def Info: Logo.png  used on input line 88.
 (pdftex.def)             Requested size: 91.32pt x 27.39598pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -589,10 +586,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
  <./Logo.png> <./bullet.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 89.
+Package xcolor Warning: Incompatible color definition on input line 97.
 
 
-Overfull \hbox (11.09244pt too wide) in paragraph at lines 98--130
+Package xcolor Warning: Incompatible color definition on input line 110.
+
+
+Overfull \hbox (11.09244pt too wide) in paragraph at lines 119--151
  [][] 
  []
 
@@ -602,21 +602,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <img/simulator.png, id=25, 512.91624pt x 664.4825pt>
 File: img/simulator.png Graphic file (type png)
 <use img/simulator.png>
-Package pdftex.def Info: img/simulator.png  used on input line 139.
+Package pdftex.def Info: img/simulator.png  used on input line 160.
 (pdftex.def)             Requested size: 216.81pt x 280.87537pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 144.
-
-
-Package xcolor Warning: Incompatible color definition on input line 150.
+Package xcolor Warning: Incompatible color definition on input line 165.
 
 <notaglineLogo.png, id=26, 401.5pt x 120.45pt>
 File: notaglineLogo.png Graphic file (type png)
 <use notaglineLogo.png>
-Package pdftex.def Info: notaglineLogo.png  used on input line 150.
+Package pdftex.def Info: notaglineLogo.png  used on input line 169.
 (pdftex.def)             Requested size: 91.32pt x 27.39598pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -635,140 +632,17 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [2 <./notaglineLogo.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 157.
+Package xcolor Warning: Incompatible color definition on input line 171.
 
 
-Package xcolor Warning: Incompatible color definition on input line 166.
+Package xcolor Warning: Incompatible color definition on input line 178.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-[]\T1/ptm/m/n/7.61 Pintail, \T1/ptm/m/it/7.61 Uniswap: A Good Deal for Liq-uid-
-ity Providers?\T1/ptm/m/n/7.61 ,
- []
+Package xcolor Warning: Incompatible color definition on input line 187.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-\T1/ptm/m/n/7.61 Jan. 2019. Ac-cessed on: Dec 2022. [On-line]. Avail-able:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-\T1/ptm/m/n/7.61 https://pintail.medium.com/uniswap-a-good-deal-for-liquidity-p
-roviders-
- []
-
-
-Underfull \hbox (badness 2134) in paragraph at lines 170--171
-\T1/ptm/m/n/7.61 2022. [On-line]. Avail-able: hhttps://pintail.medium.com/under
-standing-
- []
-
-
-Underfull \hbox (badness 7151) in paragraph at lines 172--173
-[]\T1/ptm/m/n/7.61 P. Erins, \T1/ptm/m/it/7.61 How to cal-cu-late Im-per-ma-nen
-t Loss: full deriva-tion\T1/ptm/m/n/7.61 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-\T1/ptm/m/n/7.61 Jun. 2021. Ac-cessed on: Dec 2022. [On-line]. Avail-able:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-\T1/ptm/m/n/7.61 https://medium.com/auditless/how-to-calculate-impermanent-loss
--full-
- []
-
-
-Underfull \hbox (badness 2189) in paragraph at lines 176--177
-\T1/ptm/m/it/7.61 in Uniswap\T1/ptm/m/n/7.61 , Oct. 2021. Ac-cessed on: Dec 202
-2. [On-line]. Avail-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
-[]\T1/ptm/m/n/7.61 Danr, \T1/ptm/m/it/7.61 Ex-pected Im-per-ma-nent Loss in Uni
-swap V2 & V3\T1/ptm/m/n/7.61 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
-\T1/ptm/m/n/7.61 Mar. 2022. Ac-cessed on: Dec 2022. [On-line]. Avail-able:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
-\T1/ptm/m/n/7.61 https://medium.com/gammaswap-labs/expected-impermanent-loss-in
--
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-[]\T1/ptm/m/n/7.61 Danr, \T1/ptm/m/it/7.61 To-tal Re-turns and Im-per-ma-nent L
-oss in Uniswap V2\T1/ptm/m/n/7.61 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-\T1/ptm/m/n/7.61 Dec. 2021. Ac-cessed on: Dec 2022. [On-line]. Avail-able:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-\T1/ptm/m/n/7.61 https://medium.com/gammaswap-labs/total-returns-and-impermanen
-t-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-\T1/ptm/m/n/7.61 https://icmoore.medium.com/masternode-yield-farming-as-a-daosy
-s-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
-\T1/ptm/m/n/7.61 https://icmoore.medium.com/masternode-yield-farming-as-a-daosy
-s-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
-[]\T1/ptm/m/n/7.61 I.C. Moore, \T1/ptm/m/it/7.61 Sim-u-la-tion: Mas-tern-ode Yi
-eld Farm-ing\T1/ptm/m/n/7.61 , Syscoin
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
-\T1/ptm/m/n/7.61 Github re-pos, Ac-cessed on: Apr 2021. [On-line]. Avail-able:
- []
-
-
-Underfull \hbox (badness 2478) in paragraph at lines 193--194
-\T1/ptm/m/it/7.61 Plat-form\T1/ptm/m/n/7.61 , Feb 2021, Ac-cessed on: Sep 2021.
- [On-line]. Avail-able:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
-\T1/ptm/m/n/7.61 https://jsidhu.medium.com/a-design-for-an-efficient-coordinate
-d-
- []
-
-LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 196.
-
-Underfull \hbox (badness 1436) in paragraph at lines 195--197
-\T1/ptm/m/n/7.61 Plat-form, Dec. 2021. Ac-cessed on: Sept 2022. [On-line]. Avai
-l-able:
- []
-
-File: bullet.png Graphic file (type png)
-<use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 203.
-(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglineLogo.png Graphic file (type png)
 <use notaglineLogo.png>
-Package pdftex.def Info: notaglineLogo.png  used on input line 205.
+Package pdftex.def Info: notaglineLogo.png  used on input line 223.
 (pdftex.def)             Requested size: 91.32pt x 27.39598pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -785,7 +659,158 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[3 <./img/simulator.png>] (./article.aux)
+[3 <./img/simulator.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 225.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+[]\T1/ptm/m/n/7.61 Pintail, \T1/ptm/m/it/7.61 Uniswap: A Good Deal for Liq-uid-
+ity Providers?\T1/ptm/m/n/7.61 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+\T1/ptm/m/n/7.61 Jan. 2019. Ac-cessed on: Dec 2022. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+\T1/ptm/m/n/7.61 https://pintail.medium.com/uniswap-a-good-deal-for-liquidity-p
+roviders-
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 229--230
+\T1/ptm/m/n/7.61 2022. [On-line]. Avail-able: hhttps://pintail.medium.com/under
+standing-
+ []
+
+
+Underfull \hbox (badness 7151) in paragraph at lines 231--232
+[]\T1/ptm/m/n/7.61 P. Erins, \T1/ptm/m/it/7.61 How to cal-cu-late Im-per-ma-nen
+t Loss: full deriva-tion\T1/ptm/m/n/7.61 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+\T1/ptm/m/n/7.61 Jun. 2021. Ac-cessed on: Dec 2022. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+\T1/ptm/m/n/7.61 https://medium.com/auditless/how-to-calculate-impermanent-loss
+-full-
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 235--236
+\T1/ptm/m/it/7.61 in Uniswap\T1/ptm/m/n/7.61 , Oct. 2021. Ac-cessed on: Dec 202
+2. [On-line]. Avail-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+[]\T1/ptm/m/n/7.61 Danr, \T1/ptm/m/it/7.61 Ex-pected Im-per-ma-nent Loss in Uni
+swap V2 & V3\T1/ptm/m/n/7.61 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+\T1/ptm/m/n/7.61 Mar. 2022. Ac-cessed on: Dec 2022. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+\T1/ptm/m/n/7.61 https://medium.com/gammaswap-labs/expected-impermanent-loss-in
+-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+[]\T1/ptm/m/n/7.61 Danr, \T1/ptm/m/it/7.61 To-tal Re-turns and Im-per-ma-nent L
+oss in Uniswap V2\T1/ptm/m/n/7.61 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+\T1/ptm/m/n/7.61 Dec. 2021. Ac-cessed on: Dec 2022. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+\T1/ptm/m/n/7.61 https://medium.com/gammaswap-labs/total-returns-and-impermanen
+t-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+\T1/ptm/m/n/7.61 https://icmoore.medium.com/masternode-yield-farming-as-a-daosy
+s-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+\T1/ptm/m/n/7.61 https://icmoore.medium.com/masternode-yield-farming-as-a-daosy
+s-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+[]\T1/ptm/m/n/7.61 I.C. Moore, \T1/ptm/m/it/7.61 Sim-u-la-tion: Mas-tern-ode Yi
+eld Farm-ing\T1/ptm/m/n/7.61 , Syscoin
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+\T1/ptm/m/n/7.61 Github re-pos, Ac-cessed on: Apr 2021. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 2478) in paragraph at lines 252--253
+\T1/ptm/m/it/7.61 Plat-form\T1/ptm/m/n/7.61 , Feb 2021, Ac-cessed on: Sep 2021.
+ [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+\T1/ptm/m/n/7.61 https://jsidhu.medium.com/a-design-for-an-efficient-coordinate
+d-
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 255.
+
+Underfull \hbox (badness 1436) in paragraph at lines 254--256
+\T1/ptm/m/n/7.61 Plat-form, Dec. 2021. Ac-cessed on: Sept 2022. [On-line]. Avai
+l-able:
+ []
+
+File: bullet.png Graphic file (type png)
+<use bullet.png>
+Package pdftex.def Info: bullet.png  used on input line 262.
+(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
+File: notaglineLogo.png Graphic file (type png)
+<use notaglineLogo.png>
+Package pdftex.def Info: notaglineLogo.png  used on input line 264.
+(pdftex.def)             Requested size: 91.32pt x 27.39598pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[4
+
+] (./article.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -794,13 +819,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7297 strings out of 478994
- 116282 string characters out of 5858185
- 687522 words of memory out of 5000000
- 24626 multiletter control sequences out of 15000+600000
- 487965 words of font info for 151 fonts, out of 8000000 for 9000
+ 7306 strings out of 478994
+ 116485 string characters out of 5858185
+ 688875 words of memory out of 5000000
+ 24635 multiletter control sequences out of 15000+600000
+ 486321 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,13n,117p,901b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,13n,117p,901b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -819,10 +844,10 @@ urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/hel
 vetic/uhvro8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utm
 b8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
 usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on article.pdf (3 pages, 216227 bytes).
+Output written on article.pdf (4 pages, 225236 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  29 words of extra memory for PDF output out of 10000 (max. 10000000)
 

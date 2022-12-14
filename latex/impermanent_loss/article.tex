@@ -81,6 +81,12 @@ However, (\ref{eqn:imp_loss}) provides limited insight, as it is represented onl
 \end{equation}
 see Appendix \ref{sec:exp_imp_loss_derv} for the analytical derivation of (\ref{eqn:exp_imp_loss}), and a similar derivation also be found in \cite{Dan22}.
 
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/imp_loss.png}
+\caption{Expected impermanent loss} 
+\label{fig:daosys_protocol}
+\end{figure}
+
 \subsection{Expected Portfolio Values}
 \label{sec:exp_portfolio_value}
 
@@ -100,12 +106,31 @@ see Appendix \ref{sec:exp_imp_loss_derv} for the analytical derivation of (\ref{
 \lipsum[1]
 
 \begin{equation}\label{eqn:portfolio_outside}
-  E\{V\} = 2 L \sqrt{P_{0}}  e^{(\frac{\mu t}{2} - \frac{\sigma^2 t}{8})}e^{f(t)}
+  E\{V\} = 2 L \sqrt{P_{0}}  e^{(\frac{\mu t}{2} - \frac{\sigma^2 t}{8})}e^{z_{t}}
 \end{equation}
 
 \begin{equation}\label{eqn:exp_returns}
-  E\{R\} = \frac{e^{-\frac{\sigma^2 t}{8} + f(t)}}{\cosh (\frac{\mu t}{2})}
+  E\{R\} = \frac{e^{-\frac{\sigma^2 t}{8} + z_{t}}}{\cosh (\frac{\mu t}{2})}
 \end{equation}
+Referring to (\ref{eqn:portfolio_outside}) and (\ref{eqn:exp_returns}), the term $e^{z_{t}}$ represents portfolio growth due to the accumulation of trading fees, where $z_{t}$ can be defined a myriad of ways. If we take the aggregation of individual deposits $a_{i}$ over each $t$ in the form of a geometric mean, this can be expressed by the following:
+
+\begin{equation}\label{eqn:geo_mean}
+  (\prod_{i=1}^{n}a_{i})^{\frac{1}{n}} = e^{\frac{1}{n}\sum_{i}^{n}\ln a_{i}}
+\end{equation}
+For sake of brevity, we assume $\alpha = \frac{1}{n}\sum_{i}^{n}\ln a_{i}$, hence the growth term becomes:
+\begin{equation}\label{eqn:geo_mean}
+  F_{t} = e^{\alpha t}
+\end{equation}
+where $\alpha$ represents constant rate of growth, hence assuming GBM, the overall expected returns become:
+\begin{equation}\label{eqn:exp_returns}
+  E\{R\} = \frac{e^{-\frac{\sigma^2 t}{8} + \alpha t}}{\cosh (\frac{\mu t}{2})}
+\end{equation}
+
+\begin{figure}[h!]
+\includegraphics[width=3in]{img/imp_loss_compounding_fees.png}
+\caption{Expected impermanent loss with trading fees} 
+\label{fig:daosys_protocol}
+\end{figure}
 
 \section{DeFi Python Simulator}
 \label{sec:python_simulator}
@@ -203,7 +228,7 @@ Using (\ref{eqn:initial_lp_value_gbm}) and $E\{e^{aX}\} = e^{\mu a + \frac{a^2 \
 \begin{eqnarray*}\label{eqn:derivation_exp_v0}
 E\{V_{0}\} &=& E\{2L \sqrt{P_{0}} e^{(\frac{\mu}{2} - \frac{\sigma^2}{4})t } e^{\frac{\sigma W_{t}}{2}} \} \\ 
            &=& 2L \sqrt{P_{0}} e^{(\frac{\mu}{2} - \frac{\sigma^2}{4})t } E\{e^{ \frac{\sigma W_{t}}{2} }\} \\
-           &=& 2L \sqrt{P_{0}} e^{(\frac{\mu}{2} - \frac{\sigma^2}{4})t } e^{\frac{\sigma^2 t}{8}} \\
+           &=& 2L \sqrt{P_{0}} e^{(\frac{\mu}{2} - \frac{\sigma^2}{4})t } e^{0+\frac{\sigma^2 t}{8}} \\
            &=&  2L \sqrt{P_{0}}e^{( \frac{\mu}{2} - \frac{\sigma^2}{8})}
 \end{eqnarray*}
 Likewise, using (\ref{eqn:held_lp_value_gbm}) and the same identity, we calculate $E\{V_{H}\}$: 
@@ -211,7 +236,7 @@ Likewise, using (\ref{eqn:held_lp_value_gbm}) and the same identity, we calculat
 E\{V_{H}\} &=& E\{L \sqrt{P_{0}}(1 + e^{(\mu - \frac{\sigma^2}{2})t + \sigma W_{t} })\} \\
 		   &=& L \sqrt{P_{0}}(1 + E\{ e^{(\mu - \frac{\sigma^2}{2})t + \sigma W_{t} }  \}) \\
 		   &=& L \sqrt{P_{0}}(1 + e^{(\mu - \frac{\sigma^2}{2})t} E\{e^{\sigma W_{t}}\} ) \\
-		   &=& L \sqrt{P_{0}}(1 + e^{(\mu - \frac{\sigma^2}{2})t} e^{\frac{\sigma^2}{2}t} \\
+		   &=& L \sqrt{P_{0}}(1 + e^{(\mu - \frac{\sigma^2}{2})t} e^{0+\frac{\sigma^2}{2}t} \\
 		   &=& L \sqrt{P_{0}}(1 + e^{\mu t} )
 \end{eqnarray*}
 Therefore using the the identity $\cosh(x) = \frac{1 + e^{2x}}{2 e^x}$, and our definition of IL outlined in (\ref{eqn:imp_loss})  we have:

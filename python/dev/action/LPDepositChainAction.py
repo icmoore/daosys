@@ -90,8 +90,8 @@ class LPDepositChainAction(Action):
             
         lp_events = self.get_target().get_lp().get_lp_events()
         lp = self.get_target().get_lp()
-        lp.get_liquidity().delta_x(delta1)
-        lp.get_liquidity().delta_y(delta2)        
+        lp.get_liquidity().add_delta_x(delta1)
+        lp.get_liquidity().add_delta_y(delta2)        
         
         if(index == 0):
             delta = np.sqrt(delta1*delta2)

@@ -19,11 +19,13 @@ class Liquidity():
     def __init__(self, x_real, y_real, x_name, y_name):
         self.__x_real = x_real
         self.__y_real = y_real  
-        self.__liquidity_val = 0
-        self.__yx_swap_price = None 
         self.__x_name = x_name
-        self.__y_name = y_name          
-          
+        self.__y_name = y_name        
+        self.__liquidity_val = 0
+        self.__yx_price = None 
+        self.__x_delta = 0
+        self.__y_delta = 0           
+       
     def get_x_real(self):
         return self.__x_real
 
@@ -39,11 +41,15 @@ class Liquidity():
     def get_liquidity_val(self):
         return self.__liquidity_val  
       
-    def get_swap_price(self, direction = 'YX'): 
+    def get_price(self, direction = 'YX'): 
+        
+        if(self.__yx_price == None):
+            self.calc()    
+            
         if direction == self.YX_PRICE:
-            return self.__yx_swap_price
+            return self.__yx_price
         else: 
-            return 1/self.__yx_swap_price    
+            return 1/self.__yx_price    
           
     def set_y_real(self, y_real):
         self.__y_real = y_real
@@ -57,32 +63,34 @@ class Liquidity():
     def set_y_name(self, y_name):
         self.__y_name = y_name   
         
-    def delta_x(self, x_new):
-        self.__x_real = self.__x_real + x_new  
+    def add_delta_x(self, x_delta):
+        self.__x_delta = x_delta
+        self.__x_real = self.__x_real + x_delta  
         
-    def delta_y(self, y_new):
-        self.__y_real = self.__y_real + y_new       
+    def add_delta_y(self, y_delta):
+        self.__y_delta = y_delta
+        self.__y_real = self.__y_real + y_delta       
         
-    def calc_delta_y(self, delta_x):
-        return (self.__y_real*delta_x)/(self.__x_real+delta_x)
-
-    def calc_delta_x(self, delta_y):
-        return (self.__x_real*delta_y)/(self.__y_real+delta_y)
-
     def calc(self): 
         
         self.__prev_liquidity_val = copy.copy(self.__liquidity_val)
         if(self.__x_real != 0):
-            self.__yx_swap_price = self.__y_real / self.__x_real
             self.__liquidity_val = np.sqrt(self.__x_real*self.__y_real)
+            self.__yx_price = self.calc_price()
 
         return self.__liquidity_val
+    
+    def calc_price(self): 
+        if(self.__liquidity_val == 0):
+            return 0
+        else:
+            return self.__y_real**2/self.__liquidity_val**2
          
-    def swap(self, delta_x):
+    def swap(self, x_delta):
         
-        delta_y = self.calc_delta_y(delta_x)
-        self.__swap_price = delta_y / delta_x
-        self.__x_real = (self.__x_real+delta_x)
-        self.__y_real = (self.__y_real-delta_y)      
+        #delta_y = self.calc_delta_y(delta_x)
+        self.__yx_price = self.calc_price()
+        self.__x_real = (self.__x_real+x_delta)
+        self.__y_real = (self.__y_real-y_delta)      
          
         return np.sqrt(self.__x_real*self.__y_real)

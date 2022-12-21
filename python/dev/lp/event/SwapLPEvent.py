@@ -24,8 +24,8 @@ class SwapLPEvent(LPEvent):
             token_name = target.get_name()
             token_address = self.__retrieve_address(SwapAction.ACTION_TYPE_DEPOSIT)
             token_yield = self.__retrieve_token_yield(token_address)
-            if(token_name == x_name): liquidity.delta_x(token_yield)
-            if(token_name == y_name): liquidity.delta_y(token_yield)
+            if(token_name == x_name): liquidity.add_delta_x(token_yield)
+            if(token_name == y_name): liquidity.add_delta_y(token_yield)
     
         token_delta = self.__retrieve_token_delta()    
         L = liquidity.swap(token_delta)

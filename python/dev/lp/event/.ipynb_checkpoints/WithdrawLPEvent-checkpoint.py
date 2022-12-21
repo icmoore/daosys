@@ -23,12 +23,12 @@ class WithdrawLPEvent(LPEvent):
             token_yield = self.__retrieve_token_yield(token_address)
             token_delta = self.__retrieve_token_delta()
             token_delta = token_delta + token_yield
-            if(token_name == x_name): liquidity.delta_x(token_delta)
-            if(token_name == y_name): liquidity.delta_y(token_delta)
+            if(token_name == x_name): liquidity.add_delta_x(token_delta)
+            if(token_name == y_name): liquidity.add_delta_y(token_delta)
         elif(token_type == Mint.TYPE_NONREBASE):
             token_delta = self.__retrieve_token_delta()
-            if(token_name == x_name): liquidity.delta_x(token_delta)
-            if(token_name == y_name): liquidity.delta_y(token_delta)
+            if(token_name == x_name): liquidity.add_delta_x(token_delta)
+            if(token_name == y_name): liquidity.add_delta_y(token_delta)
             
         L = liquidity.calc()
         self.set_liquidity(liquidity)

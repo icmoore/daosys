@@ -68,7 +68,7 @@ class LPEventSeries():
         self.__liquidity_values.append(val)
         
     def update_prices(self):
-        price = self.get_last_event().get_liquidity().get_swap_price()
+        price = self.get_last_event().get_liquidity().get_price()
         self.__prices.append(price)    
         
     def update_dates(self):       

@@ -39,7 +39,7 @@ class LiquidityPool():
         return self.__liquidity_val     
    
     def get_price(self):
-        return self.__liquidity.get_swap_price()
+        return self.__liquidity.get_price()
 
     def get_x(self):
         return self.__liquidity.get_x_real()    

@@ -32,6 +32,12 @@ class Liquidity():
     def get_y_real(self):
         return self.__y_real
     
+    def get_x_delta(self):
+        return self.__x_delta
+
+    def get_y_delta(self):
+        return self.__y_delta    
+    
     def get_x_name(self):
         return self.__x_name  
     

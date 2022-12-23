@@ -3,6 +3,11 @@ from python.dev.helper import CopyAction
 from python.dev.helper import ActionLog
 from python.dev.event import TokenEvent
 
+################## FIX #######################
+### Must accept one time_delta per batch #####
+##############################################
+
+
 class ActionBatch():
     
     def __init__(self, name, n_batches = 0):
@@ -76,13 +81,11 @@ class ActionBatch():
         #print('time delta {}'.format(action_type, t_delta))
         coin = action.get_target().get_name()
         
-        if(action_type == TokenEvent.EVENT_DEPOSIT and t_delta == 0):
-            #print('Error: DEPOSIT into {} must have non-zero time delta'.format(coin))
-            #return False
+        if(action_type == TokenEvent.EVENT_DEPOSIT):
             self.__t_deltas.append(t_delta)
-        elif(action_type == TokenEvent.EVENT_DEPOSIT and t_delta != 0): 
-            self.__t_deltas.append(t_delta)
-        
+        elif(action_type == TokenEvent.EVENT_WITHDRAW and len(self.__t_deltas) == 0):
+            self.__t_deltas.append(t_delta)    
+
         if(action_type == TokenEvent.EVENT_DEPOSIT and len(self.__t_deltas) != 0 and 
            t_delta != self.__t_deltas[-1]):
             print('Error: time delta for {} not homogenous with other deposits'.format(coin))

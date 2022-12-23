@@ -21,7 +21,7 @@ class DepositAction(Action):
         self.__target.set_token(token) 
         
         return True
-    
+        
     def get_mint_id(self):
         return self.__mint_id  
 

@@ -10,7 +10,7 @@ class WithdrawAction(Action):
         self.__mint_id = mint_id
               
     def apply(self, agents):
-        
+                
         token = self.__target.get_token()
         address = self.__target.get_address(self.__mint_id) 
         self.__token_event.set_address(address)

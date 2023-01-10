@@ -1,4 +1,7 @@
 import numpy as np
+from python.dev.math.model import EventSelectionModel
+  
+MAX_TRADE = 10000    
     
 class TokenDeltaModel():
     
@@ -9,14 +12,20 @@ class TokenDeltaModel():
     def apply(self, n = 1, max_trade = 10000):
         
         if(n == 1):
-            delta = np.random.gamma(self.__shape, self.__scale)
-            return min(delta, max_trade)  
+            rval = self.delta(self, max_trade)
+            return min(rval, max_trade)  
         else:
     
             res = []
             for k in range(n):
-                rval = np.random.gamma(self.__shape, self.__scale)
+                rval = self.delta(self, max_trade)
                 res.append(min(rval,max_trade))
                 
-            return res        
-     
+            return res  
+        
+    def delta(self, p=1, max_trade=100):
+        self.__scale = max_trade/5
+        return self.add_sub(p)*np.random.gamma(self.__shape, self.__scale)   
+    
+    def add_sub(self, p):
+        return 1 if bool(EventSelectionModel().bi_select(p)) else -1     

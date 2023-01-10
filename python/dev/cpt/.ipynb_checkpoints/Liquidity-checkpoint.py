@@ -72,12 +72,12 @@ class Liquidity():
     def add_delta_x(self, x_delta):
         self.__x_delta = x_delta
         self.__x_real = self.__x_real + x_delta 
-        self.calc()
+        self.__liquidity_val = self.calc()
         
     def add_delta_y(self, y_delta):
         self.__y_delta = y_delta
         self.__y_real = self.__y_real + y_delta 
-        self.calc()
+        self.__liquidity_val = self.calc()
         
     def calc(self): 
         

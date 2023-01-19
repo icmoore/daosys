@@ -11,10 +11,11 @@
 import numpy as np
 import copy
 
+YX_PRICE = 'YX'
+XY_PRICE = 'XY'
+FEE = 3/1000
+
 class Liquidity():
-    
-    YX_PRICE = 'YX'
-    XY_PRICE = 'XY'
     
     def __init__(self, x_real, y_real, x_name, y_name):
         self.__x_real = x_real
@@ -23,6 +24,8 @@ class Liquidity():
         self.__y_name = y_name        
         self.__liquidity_val = 0
         self.__yx_price = None 
+        self.__y_fee = None 
+        self.__x_fee = None         
         self.__x_delta = 0
         self.__y_delta = 0           
        
@@ -36,7 +39,13 @@ class Liquidity():
         return self.__x_delta
 
     def get_y_delta(self):
-        return self.__y_delta    
+        return self.__y_delta   
+    
+    def get_x_fee(self):
+        return self.__x_fee
+
+    def get_y_fee(self):
+        return self.__y_fee     
     
     def get_x_name(self):
         return self.__x_name  
@@ -52,7 +61,7 @@ class Liquidity():
         if(self.__yx_price == None):
             self.calc()    
             
-        if direction == self.YX_PRICE:
+        if direction == YX_PRICE:
             return self.__yx_price
         else: 
             return 1/self.__yx_price    
@@ -67,7 +76,15 @@ class Liquidity():
         self.__x_name = x_name  
     
     def set_y_name(self, y_name):
-        self.__y_name = y_name   
+        self.__y_name = y_name  
+    
+    def swap(self, x_delta, y_delta):
+        self.__x_fee = self.calc_fee(x_delta)
+        self.__y_fee = self.calc_fee(y_delta)
+        x_delta = x_delta - self.__x_fee
+        y_delta = y_delta - self.__y_fee
+        self.add_delta_x(x_delta)
+        self.add_delta_y(y_delta)
         
     def add_delta_x(self, x_delta):
         self.__x_delta = x_delta
@@ -75,9 +92,14 @@ class Liquidity():
         self.__liquidity_val = self.calc()
         
     def add_delta_y(self, y_delta):
-        self.__y_delta = y_delta
+        self.__y_delta = y_delta 
         self.__y_real = self.__y_real + y_delta 
         self.__liquidity_val = self.calc()
+        
+    def calc_fee(self, delta):
+        fee = FEE*delta if delta > 0 else 0
+        fee = fee if fee > 1e-8 else 0
+        return fee
         
     def calc(self): 
         

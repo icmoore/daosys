@@ -15,15 +15,21 @@ class SimulateLiquidity():
         self.__dai_arr = np.array([self.__liq.get_y_real()])
         self.__dsys_arr = np.array([]) 
         self.__ddai_arr = np.array([])
+        self.__fee_sys_arr = np.array([]) 
+        self.__fee_dai_arr = np.array([])        
         self.__p_arr = None
         
     def run(self, p_arr, dx_rate = 0.5, dy_rate = 0.5):
         self.__p_arr = p_arr
         for p in p_arr[1:]:
             swap_dx, swap_dy = self.__sDel.apply(p)
-            self.__sDel.apply(p) 
+            #self.__sDel.apply(p) 
             self.add_deltas(dx_rate, dy_rate)
             self.update_arr(swap_dx, swap_dy)
+            
+            x_fee = self.__sDel.get_x_fee()
+            y_fee = self.__sDel.get_y_fee()
+            #print('x fee {}, y fee {}'.format(x_fee, y_fee))
     
     def get_liquidity_obj(self):
         return self.__liq 
@@ -33,6 +39,12 @@ class SimulateLiquidity():
 
     def get_dai_arr(self):
         return self.__dai_arr
+    
+    def get_fee_sys_arr(self):
+        return np.cumsum(self.__fee_sys_arr) 
+
+    def get_fee_dai_arr(self):
+        return np.cumsum(self.__fee_dai_arr)   
     
     def get_usd_arr(self):
         return self.__dai_arr+self.__sys_arr*self.__p_arr     
@@ -44,7 +56,6 @@ class SimulateLiquidity():
         return self.__ddai_arr     
     
     def add_deltas(self, dx_rate, dy_rate):
-        
         if(self.__deposits): 
             dx = self.__tdel_model.delta(dx_rate)
             self.__sDel.add_dx(dx)          
@@ -58,6 +69,8 @@ class SimulateLiquidity():
         self.__dai_arr = np.append(self.__dai_arr,  self.__liq.get_y_real())
         self.__dsys_arr = np.append(self.__sys_arr, swap_dx)
         self.__ddai_arr = np.append(self.__dai_arr, swap_dy)
+        self.__fee_sys_arr = np.append(self.__fee_sys_arr, self.__sDel.get_x_fee())
+        self.__fee_dai_arr = np.append(self.__fee_dai_arr, self.__sDel.get_y_fee())        
         
     def check(self, p_arr, N):  
         p_calc_arr = abs(self.__ddai_arr/self.__dsys_arr)

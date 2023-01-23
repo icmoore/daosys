@@ -32,13 +32,23 @@ class LiquidityPoolUSD():
         
         return usd_lp*lp
     
+    def lp_fee_usd(self, simLiq, N = None):
+        x_fees = simLiq.get_fee_sys_arr()
+        y_fees = simLiq.get_fee_dai_arr()
+        if(N == None):
+            collected_fees = y_fees + self.p_yx_arr[1:]*x_fees 
+        else:    
+            collected_fees = y_fees[N] + self.p_yx_arr[N]*x_fees[N]
+            
+        return collected_fees    
+    
     def liq(self, x = None, y = None):
         if((x != None) and (y != None)):
             return np.sqrt(x*y) 
         else:
             return np.sqrt(self.x_arr*self.y_arr) 
         
-    def lp_usd(self, N = None):
+    def lp_tot_usd(self, N = None):
         
         if(N != None):
             return self.y_arr[N] + self.x_arr[N]*self.p_yx_arr[N]
@@ -48,9 +58,9 @@ class LiquidityPoolUSD():
     def usd_per_lp(self, N = None):
         if(N != None):
             L = self.liq(self.x_arr[N], self.y_arr[N])
-            L_USD = self.lp_usd(N)
+            L_USD = self.lp_tot_usd(N)
         else: 
             L = self.liq()
-            L_USD = self.lp_usd() 
+            L_USD = self.lp_tot_usd() 
             
         return L_USD/L   

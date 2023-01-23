@@ -31,8 +31,6 @@ class SolveDeltas():
         return self.y_fee 
         
     def updates(self, p):
-        #self.liq.add_delta_x(self.dx)
-        #self.liq.add_delta_y(self.dy)
         self.liq.swap(self.dx, self.dy)
         self.p_prev = p
         

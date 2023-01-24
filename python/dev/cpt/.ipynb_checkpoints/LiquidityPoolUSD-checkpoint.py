@@ -7,20 +7,20 @@ class LiquidityPoolUSD():
         self.y_arr = y_arr
         self.p_yx_arr = p_yx_arr
  
-    def lp_position_usd(self, x_pos, y_pos, N = None):
+    def lp_position_usd(self, x_pos, y_pos, start_pt = 0, N = None):
         if(N != None):
             usd_lp = self.usd_per_lp(N)
         else:    
             usd_lp = self.usd_per_lp()
             
         lp = self.liq(x_pos,y_pos)
-        return usd_lp*lp
+        return usd_lp[start_pt:]*lp
     
-    def hodl_position_usd(self, x_pos, y_pos, N = None):
+    def hodl_position_usd(self, x_pos, y_pos, start_pt = 0, N = None):
         if(N != None):
             return y_pos + self.p_yx_arr[N]*x_pos
         else:
-            return y_pos + self.p_yx_arr*x_pos    
+            return y_pos + self.p_yx_arr[start_pt:]*x_pos    
 
     def lp_marketcap_usd(self, N = None):
         if(N != None):

@@ -24,7 +24,7 @@ class SimulateLiquidity():
         for p in p_arr[1:]:
             swap_dx, swap_dy = self.__sDel.apply(p)
             self.update_fees(self.__sDel.get_x_fee(), self.__sDel.get_y_fee())
-            self.add_lp_delta(p, lp_rate)
+            if(lp_rate > 0.54): self.add_lp_delta(p, lp_rate)
             self.update_arr(swap_dx, swap_dy)
             self.reset_fees()
             
